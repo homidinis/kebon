@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Plant : MonoBehaviour
+public class PlantSawi : MonoBehaviour
 {
     int state = 0;
-    int timer = 5;
+    int defaultTimerValue = 5; //change it here
+
     GameObject childImage;
     GameObject childButton;
+
     // Start is called before the first frame update
     void Start()
     {
-        childImage = this.transform.GetChild(0).gameObject;
+        childImage = this.transform.GetChild(0).gameObject;  //get first child, etc
         childButton = this.transform.GetChild(1).gameObject;
     }
 
@@ -22,10 +24,10 @@ public class Plant : MonoBehaviour
         
     }
 
-    public void Planting()
+    void Planting()
     {
         int gold = PlayerPrefs.GetInt("Gold");
-        if(gold >50)
+        if(gold > 50)
         {
             state++;
             if(state == 1)
@@ -37,18 +39,20 @@ public class Plant : MonoBehaviour
         }
         else
         {
-            // g bole
+          state = 0;  
         }
     }
 
     void PlantProgress()
     {
+        
+        int timer = defaultTimerValue;
         timer --;
         if(state == 1 && timer <= 0)
         {
             state ++;
             childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Tile");
-            timer = 3;
+            // timer = 2;
         }
 
         if(state == 2 && timer <= 0)
@@ -57,20 +61,28 @@ public class Plant : MonoBehaviour
             childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
             childButton.SetActive(true);
         }
+        if(state == 2 && timer <= 0)
+        {
+            state ++;
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+            childButton.SetActive(true);
+        }
     }
 
-    public void Harvest()
+    void Harvest()
     {
+        int timer = defaultTimerValue;
         state = 0;
         this.GetComponent<Button>().interactable = true;
         childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Tile");
         childButton.SetActive(false);
-        
+
         CancelInvoke("PlantProgress");
-        timer = 5;
+        timer = defaultTimerValue;
 
         int lastKangkung = PlayerPrefs.GetInt("Kangkung");
-        PlayerPrefs.SetInt("Kangkung", lastKangkung+1);
+        PlayerPrefs.SetInt("Kangkung", lastKangkung+1); //increment inventory
+        // PlayerPrefs.SetInt("Gold", lastGold+20); <- dapet gold saat menjual, pindah ke Rumah nanti
         PlayerPrefs.Save();
     }
 }
