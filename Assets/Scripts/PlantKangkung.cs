@@ -8,6 +8,8 @@ public class PlantKangkung : MonoBehaviour
     int state = 0;
     int defaultTimerValue = 5; //change it here
     public int Pot;
+    string[] PotArray = {"Pot1","Pot2","Pot3","Pot4"};
+
     GameObject childImage;
     GameObject childButton;
 
@@ -24,24 +26,37 @@ public class PlantKangkung : MonoBehaviour
         
     }
 
-    public void Planting()
+    public void Planting(int nomor_talang)
     {
+        
+        nomor_talang = Pot;
 
-        int gold = PlayerPrefs.GetInt("Gold");
-        if(gold > 50)
+        plantingSpot = PotArray[nomor_talang];
+         if (PlayerPrefs.HasKey(plantingSpot))
         {
-            state++;
-            if(state == 1)
-            {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
-                this.GetComponent<Button>().interactable = false;
-                InvokeRepeating("PlantProgress",0f,1f);
-            }
+            //handle this
         }
         else
         {
-          state = 0;  
-        }
+
+            PlayerPrefs.setString(plantingSpot,"Kangkung");
+
+            int gold = PlayerPrefs.GetInt("Gold");
+            if(gold > 50)
+            {
+                state++;
+                if(state == 1)
+                {
+                    childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                    this.GetComponent<Button>().interactable = false;
+                    InvokeRepeating("PlantProgress",0f,1f);
+                }
+            }
+            else
+            {
+            state = 0;  
+            }
+    }
     }
 
     void PlantProgress()
@@ -86,4 +101,5 @@ public class PlantKangkung : MonoBehaviour
         // PlayerPrefs.SetInt("Gold", lastGold+20); <- dapet gold saat menjual, pindah ke Rumah nanti
         PlayerPrefs.Save();
     }
+    // PlayerPrefs.Save(); call this on scene exit
 }
