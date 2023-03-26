@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlantKangkung : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class PlantKangkung : MonoBehaviour
     int defaultTimerValue = 5; //change it here
     public int Pot;
     string[] PotArray = {"Pot1","Pot2","Pot3","Pot4"}; //put pots in an array
-
+    
     GameObject childImage;
     GameObject childButton;
 
@@ -23,7 +24,7 @@ public class PlantKangkung : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Planting(int nomor_talang)
@@ -34,7 +35,7 @@ public class PlantKangkung : MonoBehaviour
         string plantingSpot = PotArray[nomor_talang];
          if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
         {
-            //handle this
+
         }
         else
         {
@@ -43,7 +44,7 @@ public class PlantKangkung : MonoBehaviour
 
             int gold = PlayerPrefs.GetInt("Gold");
             if(gold > 50) //kalau gold >50 boleh
-            {
+            { 
                 state++;
                 if(state == 1)
                 {
@@ -55,6 +56,10 @@ public class PlantKangkung : MonoBehaviour
             else
             {
             state = 0;  
+            TextMeshPro tmp_text = GetComponent<TextMeshPro>();
+            tmp_text.enabled = true;
+            tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
+            tmp_text.enabled = false;
             }
     }
     }
