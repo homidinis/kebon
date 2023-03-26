@@ -8,7 +8,7 @@ public class PlantKangkung : MonoBehaviour
     int state = 0;
     int defaultTimerValue = 5; //change it here
     public int Pot;
-    string[] PotArray = {"Pot1","Pot2","Pot3","Pot4"};
+    string[] PotArray = {"Pot1","Pot2","Pot3","Pot4"}; //put pots in an array
 
     GameObject childImage;
     GameObject childButton;
@@ -31,18 +31,18 @@ public class PlantKangkung : MonoBehaviour
         
         nomor_talang = Pot;
 
-        plantingSpot = PotArray[nomor_talang];
-         if (PlayerPrefs.HasKey(plantingSpot))
+        string plantingSpot = PotArray[nomor_talang];
+         if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
         {
             //handle this
         }
         else
         {
 
-            PlayerPrefs.setString(plantingSpot,"Kangkung");
+            PlayerPrefs.SetString(plantingSpot,"Kangkung"); //pot-sekian udah ada kangkungnya
 
             int gold = PlayerPrefs.GetInt("Gold");
-            if(gold > 50)
+            if(gold > 50) //kalau gold >50 boleh
             {
                 state++;
                 if(state == 1)
