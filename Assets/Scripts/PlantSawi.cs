@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlantSawi : MonoBehaviour
 {
+   
     int state = 0;
     int defaultTimerValue = 5; //change it here
 
@@ -16,6 +17,7 @@ public class PlantSawi : MonoBehaviour
     {
         childImage = this.transform.GetChild(0).gameObject;  //get first child, etc
         childButton = this.transform.GetChild(1).gameObject;
+         PlayerPrefs.SetInt("Gold",500);
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class PlantSawi : MonoBehaviour
             state++;
             if(state == 1)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_1");
                 this.GetComponent<Button>().interactable = false;
                 InvokeRepeating("PlantProgress",0f,1f);
             }
@@ -51,20 +53,20 @@ public class PlantSawi : MonoBehaviour
         if(state == 1 && timer <= 0)
         {
             state ++;
-            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Tile");
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_1");
             // timer = 2;
         }
 
         if(state == 2 && timer <= 0)
         {
             state ++;
-            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_2");
             childButton.SetActive(true);
         }
         if(state == 2 && timer <= 0)
         {
             state ++;
-            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_3");
             childButton.SetActive(true);
         }
     }
@@ -80,8 +82,8 @@ public class PlantSawi : MonoBehaviour
         CancelInvoke("PlantProgress");
         timer = defaultTimerValue;
 
-        int lastKangkung = PlayerPrefs.GetInt("Kangkung");
-        PlayerPrefs.SetInt("Kangkung", lastKangkung+1); //increment inventory
+        int lastSawi = PlayerPrefs.GetInt("Sawi");
+        PlayerPrefs.SetInt("Sawi", lastSawi+1); //increment inventory
         // PlayerPrefs.SetInt("Gold", lastGold+20); <- dapet gold saat menjual, pindah ke Rumah nanti
         PlayerPrefs.Save();
     }
