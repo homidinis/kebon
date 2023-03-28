@@ -4,23 +4,25 @@ using TMPro;
 
 public class GoldHandler : MonoBehaviour
 {
-    public TextMeshProUGUI goldText; // The Text UI element to display the score
+    public TextMeshProUGUI goldText; // The Text UI element to display the Gold
 
-    private int gold; // The current score value
+    private int gold; // The current Gold value
 
     void Start()
     {
-        UpdateScoreDisplay(); // Update the score display
+         UpdateGoldDisplay(); // Update the Gold display
     }
 
     void Update()
     {
-        UpdateScoreDisplay();
+
     }
 
-    // Call this method to update the score display with the current score value
-    void UpdateScoreDisplay()
+    // Call this method to update the Gold display with the current Gold value
+    public void UpdateGoldDisplay()
     {
-        goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the score text
+        Debug.Log("test");
+        goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the Gold text
+        Debug.Log("Updated gold! Gold: " + PlayerPrefs.GetInt("Gold"));
     }
 }
