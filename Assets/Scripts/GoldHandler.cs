@@ -10,6 +10,7 @@ public class GoldHandler : MonoBehaviour
 
     void Start()
     {
+        PlayerPrefs.SetInt("Gold",500);
          UpdateGoldDisplay(); // Update the Gold display
     }
 
@@ -21,7 +22,6 @@ public class GoldHandler : MonoBehaviour
     // Call this method to update the Gold display with the current Gold value
     public void UpdateGoldDisplay()
     {
-        Debug.Log("test");
         goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the Gold text
         Debug.Log("Updated gold! Gold: " + PlayerPrefs.GetInt("Gold"));
     }

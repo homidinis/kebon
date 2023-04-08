@@ -26,6 +26,7 @@ public class PlantKangkung : MonoBehaviour
 
         PlayerPrefs.SetInt("Gold",500);
         PlayerPrefs.Save();
+        
         GoldHandler myGoldHandler = GameObject.Find("Canvas").GetComponent<GoldHandler>();
         myGoldHandler.UpdateGoldDisplay();
         // GoldHandler updateGold = new GoldHandler(); //instantiate GoldHandler object
@@ -38,37 +39,50 @@ public class PlantKangkung : MonoBehaviour
     {
 
     }
+    
     public void ClickHandler(int NomorPot)
     {
+        PlayerPrefs.SetInt("Gold",500); //debug
         string plantingSpot = PotArray[NomorPot];
 
-        if(state == 0 && PlayerPrefs.HasKey(plantingSpot)==false)
+        if(state == 0 || PlayerPrefs.HasKey(plantingSpot)==false)
         {
             Planting(NomorPot);
+
+            Debug.Log("Gold sekarang: "+ PlayerPrefs.GetInt("Gold"));
             Debug.Log("Planting function ran. State: " + state + "Planting at: "+ plantingSpot);
             string occupier = PlayerPrefs.GetString(plantingSpot);    
             Debug.Log("Di pot " + plantingSpot +" ini udah ada: " + occupier);
+
         }
-        else if(state == 1 && PlayerPrefs.HasKey(plantingSpot)==true)
-        {
-             Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
-           //  InvokeRepeating("PlantProgress",0f,1f);
-        }
-        else if(state == 3)
-        {
-            Harvest(NomorPot);
-            Debug.Log("Harvested! State: " + state);
-        }
-        else{
-            Debug.Log("bruh");
-             Debug.Log("State: " + state + "Planting at: "+ plantingSpot);
-            string occupier = PlayerPrefs.GetString(plantingSpot);    
-            Debug.Log("Di pot " + plantingSpot +" ini udah ada: " + occupier);
-        }
+            else if(state == 1 || PlayerPrefs.HasKey(plantingSpot)==true)
+            {
+                Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
+                // string ok2 = Debug.Log("Elseif after Planting function (State is one and Planting Spot has Key) ran.");
+            
+                //  InvokeRepeating("PlantProgress",0f,1f);
+            }
+                else if(state == 3)
+                {
+                    Harvest(NomorPot);
+                    Debug.Log("Harvested! State: " + state);
+                    // string ok3 = Debug.Log ("elseif to Harvest has ran.");
+              
+                }
+                    else
+                    {
+                        Debug.Log("bruh");
+                        Debug.Log("State: " + state + "Planting at: "+ plantingSpot);
+                        string occupier = PlayerPrefs.GetString(plantingSpot);    
+                        Debug.Log("Di pot " + plantingSpot +" ini udah ada: " + occupier);
+                        // string bad = Debug.Log("Error function ran. State is not 1 or 3");
+                    
+                    }
         
     }
     public void Planting(int nomor_talang)
     {
+        PlayerPrefs.SetInt("Gold",500); //debug
         string plantingSpot = PotArray[nomor_talang];
 
          if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
@@ -77,36 +91,37 @@ public class PlantKangkung : MonoBehaviour
             string occupier = PlayerPrefs.GetString(plantingSpot);    
             Debug.Log("Di pot " + plantingSpot +" ini udah ada: " + occupier);
         }
-        else
-        {
-            int gold = PlayerPrefs.GetInt("Gold");
-            PlayerPrefs.SetString(plantingSpot,"Kangkung"); //pot-sekian udah ada kangkungnya
-            
-            if(gold > 50) //kalau gold >50 boleh
-            {
-              //  string potState = StateArray[Pot];
-              //  PlayerPrefs.SetInt(potState, state + 1);
-                if (state == 0)
-                {
-
-                    childImage = this.transform.GetChild(0).gameObject;  //get first child, etc
-                    Debug.Log("ChildImage: " + childImage.GetComponent<Image>().sprite);
-                    childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
-                    this.GetComponent<Button>().interactable = false;
-                    InvokeRepeating("PlantProgess",0f,1f);
-                }
-            }
             else
             {
-                string potState = StateArray[Pot];
-                PlayerPrefs.SetInt(potState, 0);
-                Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
-            // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
-            // tmp_text.enabled = true;
-            // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
-            // tmp_text.enabled = false;
+                int gold = PlayerPrefs.GetInt("Gold");
+                PlayerPrefs.SetString(plantingSpot,"Kangkung"); //pot-sekian udah ada kangkungnya
+                
+                    if(gold >= 50) //kalau gold >50 boleh
+                    {
+                        if (state == 0)
+                        {
+                            childImage = this.transform.GetChild(0).gameObject;  //get first child, etc
+                            Debug.Log("ChildImage: " + childImage.GetComponent<Image>().sprite);
+                            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+                            this.GetComponent<Button>().interactable = false;
+                            InvokeRepeating("PlantProgess",0f,1f);
+                        }
+                    }
+                        else if(state != 0)
+                        {
+                         Debug.Log("State is not zero! State: " + state);
+                        }
+                        else 
+                        { 
+                            string potState = StateArray[Pot];
+                            PlayerPrefs.SetInt(potState, 0);
+                            Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
+                        // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
+                        // tmp_text.enabled = true;
+                        // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
+                        // tmp_text.enabled = false;
+                        }
             }
-    }
     }
 
     void PlantProgress()
