@@ -10,12 +10,7 @@ public class GoldHandler : MonoBehaviour
 
     void Start()
     {
-<<<<<<< Updated upstream
-        PlayerPrefs.SetInt("Gold",500);
-         UpdateGoldDisplay(); // Update the Gold display
-=======
         UpdateScoreDisplay(); // Update the score display
->>>>>>> Stashed changes
     }
 
     void Update()
@@ -26,11 +21,7 @@ public class GoldHandler : MonoBehaviour
     // Call this method to update the score display with the current score value
     void UpdateScoreDisplay()
     {
-<<<<<<< Updated upstream
         goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the Gold text
         Debug.Log("Updated gold! Gold: " + PlayerPrefs.GetInt("Gold"));
-=======
-        goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the score text
->>>>>>> Stashed changes
     }
 }
