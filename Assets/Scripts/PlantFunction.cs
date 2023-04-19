@@ -167,12 +167,9 @@ public class PlantFunction : MonoBehaviour
             {
                 nomor_talang = Pot;
                 string plantingSpot = PotArray[nomor_talang];
-
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Tile");
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
                 timer = 4;
-
                 int lastKangkung = PlayerPrefs.GetInt("Kangkung");
                 PlayerPrefs.SetInt("Kangkung", lastKangkung + 1); //increment inventory
                 PlayerPrefs.Save();
@@ -185,12 +182,9 @@ public class PlantFunction : MonoBehaviour
             {
                 nomor_talang = Pot;
                 string plantingSpot = PotArray[nomor_talang];
-
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Tile");
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
                 timer = 4;
-
                 int lastPokchoi = PlayerPrefs.GetInt("Pokchoi");
                 PlayerPrefs.SetInt("Pokchoi", lastPokchoi + 1); //increment inventory
                 PlayerPrefs.Save();
@@ -202,8 +196,6 @@ public class PlantFunction : MonoBehaviour
             {
                 nomor_talang = Pot;
                 string plantingSpot = PotArray[nomor_talang];
-
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Tile");
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
                 timer = 4;
