@@ -28,6 +28,7 @@ public class PlantFunction : MonoBehaviour
         PlayerPrefs.SetInt("Gold", 500);
         PlayerPrefs.DeleteKey("Pot1");
         NetPot = this.transform.parent.GetComponent<Toggle>();
+
     }
 
     // Update is called once per frame
@@ -40,6 +41,7 @@ public class PlantFunction : MonoBehaviour
     {
         NomorPot = Pot;
         string plantingSpot = PotArray[NomorPot];
+        state = PlayerPrefs.GetInt(StateArray[NomorPot]);
 
 
         if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
@@ -74,9 +76,11 @@ public class PlantFunction : MonoBehaviour
 
     public void PlantKangkung(int nomor_talang)
     {
+
         occupier = "Kangkung";
         NetPot.interactable = false;
         ClickHandler(nomor_talang);
+
     }
     public void PlantPokchoi(int nomor_talang)
     {
@@ -107,10 +111,11 @@ public class PlantFunction : MonoBehaviour
             if (gold > 50) //kalau gold >50 boleh
             {
                 PlayerPrefs.SetString(plantingSpot, "Kangkung"); //pot-sekian udah ada kangkungnya
-                state++;
+                PlayerPrefs.SetInt(StateArray[nomor_talang], state++); //state = 1
+
                 if (state == 1)
                 {
-                    childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+                    childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
                     InvokeRepeating("PlantProgress", 0f, 1f);
                 }
             }
@@ -131,21 +136,21 @@ public class PlantFunction : MonoBehaviour
 
         if (state == 1 && timer == timerState1)
         {
-            state++;
-            childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+            PlayerPrefs.SetInt(StateArray[Pot], state++);
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
             // timer = 2;
         }
 
         if (state == 2 && timer == timerState2)
         {
-            state++;
-            childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_2");
+            PlayerPrefs.SetInt(StateArray[Pot], state++);
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_2");
         }
 
         if (state == 3 && timer == timerState3)
         {
-            state++;
-            childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_3");
+            PlayerPrefs.SetInt(StateArray[Pot], state++);
+            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_3");
         }
         timer--;
 
@@ -169,12 +174,13 @@ public class PlantFunction : MonoBehaviour
                 string plantingSpot = PotArray[nomor_talang];
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot],state);
                 timer = 4;
                 int lastKangkung = PlayerPrefs.GetInt("Kangkung");
                 PlayerPrefs.SetInt("Kangkung", lastKangkung + 1); //increment inventory
                 PlayerPrefs.Save();
                 PlayerPrefs.DeleteKey(plantingSpot);
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
                 Debug.Log("Harvested!");
             }
 
@@ -184,12 +190,14 @@ public class PlantFunction : MonoBehaviour
                 string plantingSpot = PotArray[nomor_talang];
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot],state);
                 timer = 4;
+
                 int lastPokchoi = PlayerPrefs.GetInt("Pokchoi");
                 PlayerPrefs.SetInt("Pokchoi", lastPokchoi + 1); //increment inventory
                 PlayerPrefs.Save();
                 PlayerPrefs.DeleteKey(plantingSpot);
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
             }
 
             if (occupier == "Selada")
@@ -198,13 +206,14 @@ public class PlantFunction : MonoBehaviour
                 string plantingSpot = PotArray[nomor_talang];
                 //RESET TIMER AND STATE, todo: insert to PlayerPrefs
                 state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot], state);
                 timer = 4;
 
                 int lastSelada = PlayerPrefs.GetInt("Selada");
                 PlayerPrefs.SetInt("Selada", lastSelada + 1); //increment inventory
                 PlayerPrefs.Save();
                 PlayerPrefs.DeleteKey(plantingSpot);
-                childImage.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
             }
         }
 
