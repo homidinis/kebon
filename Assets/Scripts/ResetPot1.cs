@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HarvestScript : MonoBehaviour
+public class ResetPot1 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,5 @@ public class HarvestScript : MonoBehaviour
     void Update()
     {
         
-    }
-    public void Harvest()
-    {
-
     }
 }
