@@ -34,9 +34,9 @@ public class PlantFunction : MonoBehaviour
 
     int timerDefault;
 
-    string[] PotArray = { "Pot1", "Pot2", "Pot3", "Pot4" }; //put pots in an array
-    string[] StateArray = { "StatePot1", "StatePot2", "StatePot3" };
-    string[] TimerArray = { "TimerPot1", "TimerPot2", "TimerPot3" };
+    //string[] PotArray = { "Pot1", "Pot2", "Pot3", "Pot4", "Pot5", "Pot6", "Pot7", "Pot8", "Pot9", "Pot10", "Pot11", "Pot12" }; //put pots in an array
+    //string[] StateArray = { "StatePot1", "StatePot2", "StatePot3", "StatePot4", "StatePot5", "StatePot6", "StatePot7", "StatePot8", "StatePot9", "StatePot10", "StatePot11","StatePot12" };
+    //string[] TimerArray = { "TimerPot1", "TimerPot2", "TimerPot3", "TimerPot4", "TimerPot5", "TimerPot6", "TimerPot7", "TimerPot8", "TimerPot9", "TimerPot10", "TimerPot3", "TimerPot3" };
 
     GameObject childImage;
     GameObject harvestButton;
@@ -54,9 +54,9 @@ public class PlantFunction : MonoBehaviour
         NetPotChoices = transform.parent.gameObject.transform.GetChild(3).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(2).gameObject;                        
         NetPot = this.transform.parent.GetComponent<Button>();
-        Debug.Log("PotArray " + PotArray[Pot]);
-        Debug.Log("Haskey " + PlayerPrefs.HasKey(PotArray[Pot]));
-        if (PlayerPrefs.HasKey(PotArray[Pot]))
+        Debug.Log("PotArray " + "Pot" + Pot);
+        Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
+        if (PlayerPrefs.HasKey("Pot"+Pot))
         {
             InvokeRepeating("Planting", 0f, 1f);
         }
@@ -78,8 +78,6 @@ public class PlantFunction : MonoBehaviour
     public void PlantKangkung()
     {
         occupier = "Kangkung";
-        NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultKangkung;
         price = priceDefaultKangkung;
         //ClickHandler();
@@ -88,8 +86,6 @@ public class PlantFunction : MonoBehaviour
     public void PlantPokchoi()
     {
         occupier = "Pokchoi";
-        NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultPokChoi;
         price = priceDefaultPokChoi;
         //ClickHandler();
@@ -98,8 +94,6 @@ public class PlantFunction : MonoBehaviour
     public void PlantSelada()
     {
         occupier = "Selada"; //set selada here jadi kode dibawah tau kalau occupier sudah jadi selada 
-        NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultSelada;
         price = priceDefaultSelada;
         //ClickHandler();
@@ -108,9 +102,9 @@ public class PlantFunction : MonoBehaviour
 
     public void ClickHandler()
     {
-        string plantingSpot = PotArray[Pot];
-        state = PlayerPrefs.GetInt(StateArray[Pot]);
-        int timer = PlayerPrefs.GetInt(TimerArray[Pot]);
+        string plantingSpot = "Pot"+Pot;
+        state = PlayerPrefs.GetInt("State"+Pot);
+        timer = PlayerPrefs.GetInt("Timer"+Pot);
 
 
         if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
@@ -149,21 +143,28 @@ public class PlantFunction : MonoBehaviour
         int gold = PlayerPrefs.GetInt("Gold");
         if (gold >= price)
         {
-            PlayerPrefs.SetString(PotArray[Pot], occupier);
-            PlayerPrefs.SetInt(TimerArray[Pot], timer);
-            PlayerPrefs.SetInt(StateArray[Pot], 1);
+            PlayerPrefs.SetString("Pot"+Pot, occupier);
+            PlayerPrefs.SetInt("Timer"+Pot, timer);
+            PlayerPrefs.SetInt("State"+Pot, 1);
             PlayerPrefs.SetInt("Gold", gold - price);
             PlayerPrefs.Save();
             InvokeRepeating("Planting", 0f, 1f);
+            NetPot.interactable = false;
+            netPotChoicesBool = false;
+        }
+        else
+        {
+            netPotChoicesBool = false;
+            Debug.Log("Not Enugh Gold");
         }
     }
 
 
     public void Planting()
     {
-        state = PlayerPrefs.GetInt(StateArray[Pot]);
-        timer = PlayerPrefs.GetInt(TimerArray[Pot]);
-        occupier = PlayerPrefs.GetString(PotArray[Pot]);
+        state = PlayerPrefs.GetInt("State"+Pot);
+        timer = PlayerPrefs.GetInt("Timer"+Pot);
+        occupier = PlayerPrefs.GetString("Pot"+Pot);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
 
         if (occupier == "Kangkung")
@@ -214,8 +215,8 @@ public class PlantFunction : MonoBehaviour
         }
 
         timer--;
-        PlayerPrefs.SetInt(StateArray[Pot], state);
-        PlayerPrefs.SetInt(TimerArray[Pot], timer);
+        PlayerPrefs.SetInt("State"+Pot, state);
+        PlayerPrefs.SetInt("Timer"+Pot, timer);
         PlayerPrefs.Save();
 
         if (timer <= 0)
@@ -229,7 +230,7 @@ public class PlantFunction : MonoBehaviour
 
     public void Harvest()
     {
-        int timer = PlayerPrefs.GetInt(TimerArray[Pot]);
+        int timer = PlayerPrefs.GetInt("Timer"+Pot);
         NetPot.interactable = true;
         if (timer <= 0)
         {
@@ -257,7 +258,7 @@ public class PlantFunction : MonoBehaviour
             Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
         }
 
-        PlayerPrefs.DeleteKey(PotArray[Pot]);
+        PlayerPrefs.DeleteKey("Pot"+Pot);
         childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
         Debug.Log("Harvested!");
     }
