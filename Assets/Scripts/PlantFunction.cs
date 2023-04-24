@@ -18,19 +18,19 @@ public class PlantFunction : MonoBehaviour
     int priceDefaultSelada = 150;
 
     int timerDefaultKangkung = 10;
-        int timerStateKangkung1 = 10;
-        int timerStateKangkung2 = 5;
-        int timerStateKangkung3 = 1;
+    int timerStateKangkung1 = 10;
+    int timerStateKangkung2 = 5;
+    int timerStateKangkung3 = 1;
 
-    int timerDefaultPokChoi = 10;
-        int timerStatePokChoi1 = 10;
-        int timerStatePokChoi2 = 5;
-        int timerStatePokChoi3 = 1;
+    int timerDefaultPokChoi = 4;
+    int timerStatePokChoi1 = 10;
+    int timerStatePokChoi2 = 10;
+    int timerStatePokChoi3 = 10;
 
-    int timerDefaultSelada = 10;
-        int timerStateSelada1 = 10;
-        int timerStateSelada2 = 5;
-        int timerStateSelada3 = 1;
+    int timerDefaultSelada = 5;
+    int timerStateSelada1 = 5;
+    int timerStateSelada2 = 5;
+    int timerStateSelada3 = 5;
 
     int timerDefault;
 
@@ -52,13 +52,18 @@ public class PlantFunction : MonoBehaviour
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotChoices = transform.parent.gameObject.transform.GetChild(3).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(2).gameObject;                        
+        harvestButton = transform.parent.gameObject.transform.GetChild(2).gameObject;
+        PlayerPrefs.SetInt("Gold", 500);
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + PotArray[Pot]);
         Debug.Log("Haskey " + PlayerPrefs.HasKey(PotArray[Pot]));
         if (PlayerPrefs.HasKey(PotArray[Pot]))
         {
-            InvokeRepeating("Planting", 0f, 1f);
+            InvokeRepeating("PlantProgress", 0f, 1f);
+        }
+        else
+        {
+           // InvokeRepeating("PlantProgress", 0f, 1f);
         }
     }
 
@@ -79,7 +84,6 @@ public class PlantFunction : MonoBehaviour
     {
         occupier = "Kangkung";
         NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultKangkung;
         price = priceDefaultKangkung;
         //ClickHandler();
@@ -89,7 +93,6 @@ public class PlantFunction : MonoBehaviour
     {
         occupier = "Pokchoi";
         NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultPokChoi;
         price = priceDefaultPokChoi;
         //ClickHandler();
@@ -99,7 +102,6 @@ public class PlantFunction : MonoBehaviour
     {
         occupier = "Selada"; //set selada here jadi kode dibawah tau kalau occupier sudah jadi selada 
         NetPot.interactable = false;
-        netPotChoicesBool = false;
         timer = timerDefaultSelada;
         price = priceDefaultSelada;
         //ClickHandler();
@@ -149,17 +151,63 @@ public class PlantFunction : MonoBehaviour
         int gold = PlayerPrefs.GetInt("Gold");
         if (gold >= price)
         {
+
+            Debug.Log("PotArray " + PotArray[Pot]);
             PlayerPrefs.SetString(PotArray[Pot], occupier);
             PlayerPrefs.SetInt(TimerArray[Pot], timer);
             PlayerPrefs.SetInt(StateArray[Pot], 1);
-            PlayerPrefs.SetInt("Gold", gold - price);
             PlayerPrefs.Save();
-            InvokeRepeating("Planting", 0f, 1f);
+            InvokeRepeating("PlantProgress", 0f, 1f);
         }
     }
 
 
     public void Planting()
+    {
+        
+        //int state = 0;
+        //int timer = timerDefault;
+
+        //string plantingSpot = PotArray[Pot];
+
+        //if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
+        //{
+        //    Debug.Log("Already planted here. State: " + state);
+        //    Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier + " dengan state: " + state);
+        //}
+        //else
+        //{
+        //    int gold = PlayerPrefs.GetInt("Gold");
+
+        //    if (gold > 50) 
+        //    {
+        //        PlayerPrefs.SetString(plantingSpot, occupier); //pot-sekian udah ada kangkungnya
+        //        state++;
+        //        PlayerPrefs.SetInt(StateArray[Pot], state); //state = 1 state gamau increment?
+        //        PlayerPrefs.SetInt(TimerArray[Pot], timerDefault);
+
+        //        PlayerPrefs.Save();
+        //        Debug.Log("Started planting with state: " + state + " Timer: " + timer);
+
+        //        if (state == 1)
+        //        {
+        //            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+        //            InvokeRepeating("PlantProgress", 0f, 1f);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
+        //        // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
+        //        // tmp_text.enabled = true;
+        //        // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
+        //        // tmp_text.enabled = false;
+        //    }
+        //}
+    }
+
+
+    public void PlantProgress()
     {
         state = PlayerPrefs.GetInt(StateArray[Pot]);
         timer = PlayerPrefs.GetInt(TimerArray[Pot]);
@@ -181,7 +229,7 @@ public class PlantFunction : MonoBehaviour
                 childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
             }
         }
-        else if(occupier == "Pokchoi") //correct spelling?
+        else if(occupier == "PokChoi") //correct spelling?
         {
             if (timer <= timerStatePokChoi3)
             {
@@ -210,18 +258,32 @@ public class PlantFunction : MonoBehaviour
             {
                 childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_1");
             }
-
         }
+
+        //if (state == 1 && timer <= timerState1)
+        //{
+        //    Debug.Log("State 1 Called");
+        //    state++;
+        //}
+        //if (state == 2 && timer <= timerState2)
+        //{
+        //    Debug.Log("State 2 Called");
+        //    state++;
+        //}
+        //if (state == 3 && timer <= timerState3)
+        //{
+        //    Debug.Log("State 3 Called");
+        //    state++;
+        //}
 
         timer--;
         PlayerPrefs.SetInt(StateArray[Pot], state);
         PlayerPrefs.SetInt(TimerArray[Pot], timer);
         PlayerPrefs.Save();
 
-        if (timer <= 0)
+        if (timer <= 0 && state == 4)
         {
-            harvestButton.SetActive(true);
-            CancelInvoke("Planting");
+            CancelInvoke("PlantProgress");
         }
 
         Debug.Log("Timer: " + timer + " State: " + state);
@@ -231,23 +293,54 @@ public class PlantFunction : MonoBehaviour
     {
         int timer = PlayerPrefs.GetInt(TimerArray[Pot]);
         NetPot.interactable = true;
-        if (timer <= 0)
+        if (timer == 0 && state == 4)
         {
             Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
             if (occupier == "Kangkung")
             {
+                string plantingSpot = PotArray[Pot];
+                //RESET TIMER AND STATE, todo: insert to PlayerPrefs
+                int state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot],state);
+                timer = 4;
+                PlayerPrefs.SetInt(TimerArray[Pot],timer); 
                 int lastKangkung = PlayerPrefs.GetInt("Kangkung");
                 PlayerPrefs.SetInt("Kangkung", lastKangkung + 1); //increment inventory
+                PlayerPrefs.Save();
+                PlayerPrefs.DeleteKey(plantingSpot);
+
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+                Debug.Log("Harvested!");
             }
+
             if (occupier == "Pokchoi")
             {
+                string plantingSpot = PotArray[Pot];
+                //RESET TIMER AND STATE, todo: insert to PlayerPrefs
+                state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot],state);
+                timer = 4;
+
                 int lastPokchoi = PlayerPrefs.GetInt("Pokchoi");
                 PlayerPrefs.SetInt("Pokchoi", lastPokchoi + 1); //increment inventory
+                PlayerPrefs.Save();
+                PlayerPrefs.DeleteKey(plantingSpot);
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
             }
+
             if (occupier == "Selada")
             {
+                string plantingSpot = PotArray[Pot];
+                //RESET TIMER AND STATE, todo: insert to PlayerPrefs
+                state = 0;
+                PlayerPrefs.SetInt(StateArray[Pot], state);
+                timer = 4;
+
                 int lastSelada = PlayerPrefs.GetInt("Selada");
                 PlayerPrefs.SetInt("Selada", lastSelada + 1); //increment inventory
+                PlayerPrefs.Save();
+                PlayerPrefs.DeleteKey(plantingSpot);
+                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
             }
             harvestButton.SetActive(false);
         }
@@ -256,56 +349,7 @@ public class PlantFunction : MonoBehaviour
         {
             Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
         }
-
-        PlayerPrefs.DeleteKey(PotArray[Pot]);
-        childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
-        Debug.Log("Harvested!");
     }
-
-    //public void Planting()
-    //{
-
-    //    //int state = 0;
-    //    //int timer = timerDefault;
-
-    //    //string plantingSpot = PotArray[Pot];
-
-    //    //if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
-    //    //{
-    //    //    Debug.Log("Already planted here. State: " + state);
-    //    //    Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier + " dengan state: " + state);
-    //    //}
-    //    //else
-    //    //{
-    //    //    int gold = PlayerPrefs.GetInt("Gold");
-
-    //    //    if (gold > 50) 
-    //    //    {
-    //    //        PlayerPrefs.SetString(plantingSpot, occupier); //pot-sekian udah ada kangkungnya
-    //    //        state++;
-    //    //        PlayerPrefs.SetInt(StateArray[Pot], state); //state = 1 state gamau increment?
-    //    //        PlayerPrefs.SetInt(TimerArray[Pot], timerDefault);
-
-    //    //        PlayerPrefs.Save();
-    //    //        Debug.Log("Started planting with state: " + state + " Timer: " + timer);
-
-    //    //        if (state == 1)
-    //    //        {
-    //    //            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
-    //    //            InvokeRepeating("PlantProgress", 0f, 1f);
-    //    //        }
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
-    //    //        // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
-    //    //        // tmp_text.enabled = true;
-    //    //        // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
-    //    //        // tmp_text.enabled = false;
-    //    //    }
-    //    //}
-    //}
-
 
 }
 
