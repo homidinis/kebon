@@ -13,7 +13,18 @@ public class ResetPot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
     }
-
+    public void Reset()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("All playerprefs deleted!");
+    }
+    public void AddGold()
+    {
+        int gold = PlayerPrefs.GetInt("Gold");
+        PlayerPrefs.SetInt("Gold", gold + 500);
+        Debug.Log("Gold added! Current gold value: " + gold);
+    }
 }
