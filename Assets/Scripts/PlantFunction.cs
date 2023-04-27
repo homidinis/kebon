@@ -42,6 +42,7 @@ public class PlantFunction : MonoBehaviour
     GameObject harvestButton;
     GameObject NetPotChoices;
     bool netPotChoicesBool = false;
+    GameObject NetPotSprite;
 
     string occupier;
     Button NetPot;
@@ -51,8 +52,9 @@ public class PlantFunction : MonoBehaviour
     {
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
-        NetPotChoices = transform.parent.gameObject.transform.GetChild(3).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(2).gameObject;                        
+        NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
+        NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
+        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                        
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Pot" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -166,50 +168,51 @@ public class PlantFunction : MonoBehaviour
         timer = PlayerPrefs.GetInt("Timer"+Pot);
         occupier = PlayerPrefs.GetString("Pot"+Pot);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
+        NetPotSprite.GetComponent<Image>().enabled = true;
 
         if (occupier == "Kangkung")
         {
             if (timer <= timerStateKangkung3)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_3");
             }
             else if (timer <= timerStateKangkung2)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_2");
             }
             else
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
             }
         }
         else if(occupier == "Pokchoi") //correct spelling?
         {
             if (timer <= timerStatePokChoi3)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_3");
             }
             else if (timer <= timerStatePokChoi2)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_2");
             }
             else
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_1");
             }
         }
         else if(occupier == "Selada")
         {
             if (timer <= timerStateSelada3)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_3");
             }
             else if (timer <= timerStateSelada2)
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_2");
             }
             else
             {
-                childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_1");
             }
 
         }
@@ -259,7 +262,7 @@ public class PlantFunction : MonoBehaviour
         }
 
         PlayerPrefs.DeleteKey("Pot"+Pot);
-        childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/kkk");
+        NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/placeholder");
         Debug.Log("Harvested!");
     }
 

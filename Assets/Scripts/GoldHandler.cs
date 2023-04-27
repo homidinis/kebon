@@ -21,6 +21,6 @@ public class GoldHandler : MonoBehaviour
     // Call this method to update the score display with the current score value
     void UpdateScoreDisplay()
     {
-        goldText.text = "Gold: " + PlayerPrefs.GetInt("Gold"); // Update the score text
+        goldText.text = ""+PlayerPrefs.GetInt("Gold"); // Update the score text
     }
 }
