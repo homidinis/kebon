@@ -68,6 +68,7 @@ public class Market : MonoBehaviour
             PlayerPrefs.SetInt("Gold", Gold);
             PlayerPrefs.SetInt(name, totalItem);
             PlayerPrefs.Save();
+            Debug.Log("Bought");
         }
         else
         {
