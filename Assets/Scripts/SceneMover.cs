@@ -15,5 +15,9 @@ public class SceneMover: MonoBehaviour
     }  
     public void Greenhouse() {  
         SceneManager.LoadScene("Greenhouse");  
-    }  
+    }
+    public void Rumah_Masak()
+    {
+        SceneManager.LoadScene("rumah_masak");
+    }
 }

@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-public class Market : MonoBehaviour
+public class Masak : MonoBehaviour
 {
-    string[,] arrayMarket =
+    string[,] arrayMasak =
     { // 1 ke kanan, 0 ke bawah
-        { "Susu", "Sprites/Kangkung_2", "50" }, 
-        { "Mentega", "Sprites/Kangkung_1", "100" },
-        { "Beras", "Sprites/Kangkung_2", "20" },
-        { "Lada", "Sprites/Kangkung_2", "50" },
-        { "Cabai", "Sprites/Kangkung_1", "100" },
-        { "Minyak", "Sprites/Kangkung_2", "20" },
+        { "Resep A", "Sprites/Kangkung_2", "50" }, 
+        { "Resep B", "Sprites/Kangkung_1", "100" },
+        { "Resep C", "Sprites/Kangkung_2", "20" },
 
     };
 
@@ -22,8 +19,8 @@ public class Market : MonoBehaviour
     void Start()
     {
         Debug.Log(PlayerPrefs.GetInt("Susu"));
-        Debug.Log("Get Length 1: " + arrayMarket.GetLength(1) + " Get Length 0: " + arrayMarket.GetLength(0));
-        for(int i = 0; i < arrayMarket.GetLength(0); i++) 
+        Debug.Log("Get Length 1: " + arrayMasak.GetLength(1) + " Get Length 0: " + arrayMasak.GetLength(0));
+        for(int i = 0; i < arrayMasak.GetLength(0); i++) 
         {
             GameObject myObj = Instantiate(btnObject, new Vector2(0,0), Quaternion.identity);
 
@@ -37,13 +34,13 @@ public class Market : MonoBehaviour
             //myObjButton.onClick.AddListener(delegate { Buy(i); });
 
             TextMeshProUGUI myObjNameText = myObj.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
-            myObjNameText.text = arrayMarket[i,0];
+            myObjNameText.text = arrayMasak[i,0];
 
             TextMeshProUGUI myObjPriceText = myObj.transform.Find("Price").GetComponent<TMPro.TextMeshProUGUI>();
-            myObjPriceText.text = arrayMarket[i, 2];
+            myObjPriceText.text = arrayMasak[i, 2];
 
             Image myObjImage = myObj.transform.Find("Image").GetComponent<Image>();
-            myObjImage.sprite = Resources.Load<Sprite>(arrayMarket[i, 1]);
+            myObjImage.sprite = Resources.Load<Sprite>(arrayMasak[i, 1]);
         }
     }
 
@@ -54,8 +51,8 @@ public class Market : MonoBehaviour
     }
     void Buy(int j) //onclick: check gold: if price < gold then increment inventory. add "yakin membeli" button
     {
-        int price = int.Parse(arrayMarket[j, 2]);
-        string name = arrayMarket[j, 0];
+        int price = int.Parse(arrayMasak[j, 2]);
+        string name = arrayMasak[j, 0];
         int Gold = PlayerPrefs.GetInt("Gold");
         if(Gold >= price)
         {
