@@ -7,11 +7,19 @@ public class Masak : MonoBehaviour
 {
     string[,] arrayMasak =
     { // 1 ke kanan, 0 ke bawah
-        { "Resep A", "Sprites/Kangkung_2", "50" }, 
+        { "Resep A", "Sprites/Kangkung_2", "50" },
         { "Resep B", "Sprites/Kangkung_1", "100" },
         { "Resep C", "Sprites/Kangkung_2", "20" },
 
     };
+    string[][] jaggedArray =
+    {
+        new string[]
+            {"Pakchoi Siram Jamur","Pokchoi","Bawang","Jamur","Kecap"},
+        new string[]
+            {"Pakchoi Saus Tiram","Pokchoi","Bawang","Kecap","Saus tiram"}
+    };
+
 
     public GameObject btnObject;
     public GameObject canvasObject;
@@ -20,9 +28,9 @@ public class Masak : MonoBehaviour
     {
         Debug.Log(PlayerPrefs.GetInt("Susu"));
         Debug.Log("Get Length 1: " + arrayMasak.GetLength(1) + " Get Length 0: " + arrayMasak.GetLength(0));
-        for(int i = 0; i < arrayMasak.GetLength(0); i++) 
+        for (int i = 0; i < arrayMasak.GetLength(0); i++)
         {
-            GameObject myObj = Instantiate(btnObject, new Vector2(0,0), Quaternion.identity);
+            GameObject myObj = Instantiate(btnObject, new Vector2(0, 0), Quaternion.identity);
 
             Button myObjButton = myObj.GetComponent<Button>();
             int iCopy = i;
@@ -34,7 +42,7 @@ public class Masak : MonoBehaviour
             //myObjButton.onClick.AddListener(delegate { Buy(i); });
 
             TextMeshProUGUI myObjNameText = myObj.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
-            myObjNameText.text = arrayMasak[i,0];
+            myObjNameText.text = arrayMasak[i, 0];
 
             TextMeshProUGUI myObjPriceText = myObj.transform.Find("Price").GetComponent<TMPro.TextMeshProUGUI>();
             myObjPriceText.text = arrayMasak[i, 2];
@@ -47,7 +55,11 @@ public class Masak : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+    void OpenRecipe(int j)
+    {
+
     }
     void Buy(int j) //onclick: check gold: if price < gold then increment inventory. add "yakin membeli" button
     {
