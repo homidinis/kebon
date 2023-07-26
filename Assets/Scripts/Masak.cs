@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 public class Masak : MonoBehaviour
 {
-    
 
 
+    public Animator anim;
     public GameObject btnObject;
     public GameObject canvasObject;
     public GameObject recipePanel;
@@ -15,6 +15,7 @@ public class Masak : MonoBehaviour
     public GameObject masakButton;
     public TextMeshProUGUI recipeTitle;
     public TextMeshProUGUI recipeDescription;
+    //public GameObject recipeImage;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,10 @@ public class Masak : MonoBehaviour
 
             Image myObjImage = myObj.transform.Find("Image").GetComponent<Image>();
             myObjImage.sprite = Resources.Load<Sprite>(GlobalVariable.arrayResep[i, 1]);
+            PlayerPrefs.SetInt("Pokchoi", 0);
+            PlayerPrefs.SetInt("Bawang", 0);
+            PlayerPrefs.SetInt("Jamur", 0);
+            PlayerPrefs.SetInt("Kecap", 0);
         }
     }
 
@@ -55,6 +60,7 @@ public class Masak : MonoBehaviour
         recipeIngredientsPanel.SetActive(true);
         recipeTitle.text = GlobalVariable.arrayResep[j, 0];
         recipeDescription.text = GlobalVariable.arrayResep[j, 2];
+        //recipeImage.GetComponent<Image>().sprite = Resources.Load<Sprite>(GlobalVariable.arrayResep[j, 1]);
         Button myMasakButton = masakButton.GetComponent<Button>();
         myMasakButton.onClick.RemoveAllListeners();
         myMasakButton.onClick.AddListener(() => MasakFunction(j));
@@ -62,15 +68,17 @@ public class Masak : MonoBehaviour
     }
     void MasakFunction(int i)
     {
+        
         Debug.Log(GlobalVariable.arrayIngredient[i].Length);
         bool readyToCook = true;
         for(int j = 0; j < GlobalVariable.arrayIngredient[i].Length; j++)
         {
             int bahan = PlayerPrefs.GetInt(GlobalVariable.arrayIngredient[i][j]);
-            if(bahan <= 0)
+            string namaBahan = GlobalVariable.arrayIngredient[i][j];
+            if (bahan <= 0)
             {
                 readyToCook = false;
-                Debug.Log("Bahan kurang!" + bahan);
+                Debug.Log("Bahan kurang!" + namaBahan + bahan);
             }
         }
         if(readyToCook)
@@ -78,8 +86,11 @@ public class Masak : MonoBehaviour
             for(int j = 0; j < GlobalVariable.arrayIngredient[i].Length; j++)
             {
                 int bahan = PlayerPrefs.GetInt(GlobalVariable.arrayIngredient[i][j]); 
-                bahan--; 
+                bahan--;
+                
                 PlayerPrefs.SetInt(GlobalVariable.arrayIngredient[i][j], bahan); //reduce bahan by 1 and set playerpref of that ingredient
+                anim.Play("animasiMasak");
+                Debug.Log("Animation played");
                 //open cooking animation
                 int jumlahMakanan = PlayerPrefs.GetInt(GlobalVariable.arrayResep[i, 0]); //resep yang bahannya masakan lain bagaimana?
                 jumlahMakanan++;

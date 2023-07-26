@@ -5,34 +5,34 @@ public class GlobalVariable
 {
     public static string[,] arrayResep =
     { // 1 ke kanan, 0 ke bawah
-        { "Pokchoi Siram Jamur", "Sprites/Kangkung_2", "Pokchoi x1\nBawang x1\nJamur x1\nKecap x1"},
-        { "Pokchoi Saus Tiram", "Sprites/Kangkung_1","Pokchoi x1\nBawang x1\nKecap x1\nSaus Tiram x1"},
-        { "Tumis Pakchoi Tahu", "Sprites/Kangkung_2","Pokchoi x1\nBawang x1\nSaus Tiram x1\nTahu x1\nCabai"},
+        { "Pokchoi Siram Jamur", "Sprites/makanan/Makan/Makan_Pokchoi_Jamur", "Pokchoi x1\nBawang x1\nJamur x1\nKecap x1"},
+        { "Pokchoi Saus Tiram", "Sprites/makanan/Makan/Makan_Pokchoi_SausTiram","Pokchoi x1\nBawang x1\nKecap x1\nSaus Tiram x1"},
+        { "Tumis Pakchoi Tahu", "Sprites/makanan/Makan/Makan_Pokchoi_Tahu","Pokchoi x1\nBawang x1\nSaus Tiram x1\nTahu x1\nCabai"},
         
-        { "Tumis Selada Jamur", "Sprites/Kangkung_2", "Selada x1\n Bawang x1 \n Jamur x1\n Kecap x1"},
-        { "Telur Dadar Selada","Sprites/Kangkung_3","Selada x1\n Telur x1\n Kecap x1\n Margarin x1"},
+        { "Tumis Selada Jamur", "Sprites/makanan/Makan/Makan_Selada_TumisJamur", "Selada x1\n Bawang x1 \n Jamur x1\n Kecap x1"},
+        { "Telur Dadar Selada","Sprites/makanan/Makan/Makan_Selada_TelurGulung","Selada x1\n Telur x1\n Kecap x1\n Margarin x1"},
 
-        { "Kangkung Tempe","Sprites/Kangkung_3","Kangkung x1 \n Bawang x1 \n Saus Tiram x1 \n Tempe x1" },
-        { "Cah Kangkung","Sprites/Kangkung_3","Kangkung x1 \n Bawang x1 \n Saus Tiram x1\n Cabai x1"},
+        { "Kangkung Tempe","Sprites/makanan/Makan/Makan_Kangkung_TumisTempe","Kangkung x1 \n Bawang x1 \n Saus Tiram x1 \n Tempe x1" },
+        { "Cah Kangkung","Sprites/makanan/Makan/Makan_Kangkung_Tumis","Kangkung x1 \n Bawang x1 \n Saus Tiram x1\n Cabai x1"},
 
-        { "Jagung Bakar", "Sprite/Kangkung_3","Jagung x1\n Margarin x1" },
-        { "Tumis Jagung Bakar","Sprite/Kangkung_3","Jagung Bakar x1\n Bawang x1\n Cabai x1" },
-        { "Jagung Jamur Asam Manis","Sprite/Kangkung_3","Jagung x1 \n Jamur x1 \n Saus Tiram x1 \n Cabai x1 \n"},
-        { "Sup Jagung","Sprite/Kangkung_3","Jagung x1 \n Bawang x1 \n Telur x1 \n Tepung x1"},
+        { "Jagung Bakar", "Sprites/makanan/Makan/Makan_Jagung_Bakar","Jagung x1\n Margarin x1" },
+        { "Tumis Jagung Bakar","Sprites/makanan/Makan/Makan_Jagung_Tumis","Jagung Bakar x1\n Bawang x1\n Cabai x1" },
+        { "Jagung Jamur Asam Manis","Sprites/makanan/Makan/Makan_Jagung_SiramJamur","Jagung x1 \n Jamur x1 \n Saus Tiram x1 \n Cabai x1 \n"},
+        { "Sup Jagung","Sprites/makanan/Makan/Makan_Jagung_Sup","Jagung x1 \n Bawang x1 \n Telur x1 \n Tepung x1"},
 
-        { "Cincin Bawang","Sprite/Kangkung_3","Bawang x1 \n Tepung x1 \n Minyak x1"},
+        { "Cincin Bawang","Sprites/makanan/Makan/Makan_Bawang_Goreng","Bawang x1 \n Tepung x1 \n Minyak x1"},
 
-        { "Tumis Edamame","Sprite/Kangkung_3", "Edamame x1 \n Bawang x1 \n Kecap x1 \n Margarin x1"},
-        { "Edamame Goreng","Sprite/Kangkung_3" , "Edamame x1 \n Bawang x1 \n Minyak x1 \n"},
+        { "Tumis Edamame","Sprites/makanan/Makan/Makan_Edamame_Tumis", "Edamame x1 \n Bawang x1 \n Kecap x1 \n Margarin x1"},
+        { "Edamame Goreng","Sprites/makanan/Makan/Makan_Edamame_Goreng" , "Edamame x1 \n Bawang x1 \n Minyak x1 \n"},
 
-        { "Nasi Goreng Edamame","Sprite/Kangkung_3" , "Nasi x1 \n Edamame x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
-        { "Nasi Goreng Jagung","Sprite/Kangkung_3" , "Nasi x1 \n Jagung x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
+        { "Nasi Goreng Edamame","Sprites/makanan/Makan/Makan_NasiGoreng_edamame" , "Nasi x1 \n Edamame x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
+        { "Nasi Goreng Jagung","Sprites/makanan/Makan/Makan_NasiGoreng_Jagung" , "Nasi x1 \n Jagung x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
 
-        { "Telur Rebus","Sprite/Kangkung_3","Telur x1" },
-        { "Telur Ceplok","Sprite/Kangkung_3","Telur x1 \n Minyak x1" },
-        { "Telur Dadar","Sprite/Kangkung_3" , "Telur x1 \n Bawang x1 \n Minyak x1 \n Saus Tiram x1"},
+        { "Telur Rebus","Sprites/makanan/Makan/Makan_Telur_Rebus","Telur x1" },
+        { "Telur Ceplok","Sprites/makanan/Makan/Makan_Telur_Ceplok","Telur x1 \n Minyak x1" },
+        { "Telur Dadar","Sprites/makanan/Makan/Makan_Telur_Gulung" , "Telur x1 \n Bawang x1 \n Minyak x1 \n Saus Tiram x1"},
 
-        { "Nasi Goreng Lengkap","Sprite/Kangkung_3","Nasi x1 \n Tumis Pokchoi Tahu x1 \n Selada x1 \n Kangkung x1 \n Jagung x1 \n Edamame x1 \n Bawang x1 \n Telur x1 \n Jamur x1 \n Kecap x1 \n Saus Tiram x1 \n Cabai x1 \n Minyak x1 \n" }
+        { "Nasi Goreng Lengkap","Sprites/makanan/Makan/Makan_NasiGoreng_Telur.png","Nasi x1 \n Tumis Pokchoi Tahu x1 \n Selada x1 \n Kangkung x1 \n Jagung x1 \n Edamame x1 \n Bawang x1 \n Telur x1 \n Jamur x1 \n Kecap x1 \n Saus Tiram x1 \n Cabai x1 \n Minyak x1 \n" }
     };
     public static string[][] arrayIngredient =
     {
@@ -49,7 +49,7 @@ public class GlobalVariable
             {"Selada","Telur","Kecap","Margarin"},
 
         new string[]
-            {"Kangkung","Bawang","SausTiram","Tempe"},
+            {"Kangkung","Bawang","SausTiram","Tempe"}, //TODO FIX THIS - sesuaikan excel
         new string[]
             {"Kangkung","Bawang","SausTiram","Cabai"},
 
@@ -71,7 +71,7 @@ public class GlobalVariable
             {"Edamame goreng","Bawang","SausTiram","Cabai"},
 
         new string[]
-            {"Telur Rebus","Bawang","SausTiram","Cabai"},
+            {"Telur Rebus","Telur"},
         new string[]
             {"Telur Ceplok","Bawang","SausTiram","Cabai"},
         new string[]
