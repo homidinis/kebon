@@ -49,36 +49,41 @@ public class GlobalVariable
             {"Selada","Telur","Kecap","Margarin"},
 
         new string[]
-            {"Kangkung","Bawang","SausTiram","Tempe"}, //TODO FIX THIS - sesuaikan excel
+            {"Kangkung","Bawang","SausTiram","Tempe"},
         new string[]
             {"Kangkung","Bawang","SausTiram","Cabai"},
 
         new string[]
-            {"Jagung","Bawang","SausTiram","Tempe"},
+            {"Jagung","Margarin"},
         new string[]
-            {"Jagung","Bawang","SausTiram","Cabai"},
+            {"Jagung Bakar","Bawang","Cabai"},
         new string[]
-            {"Jagung","Bawang","SausTiram","Tempe"},
+            {"Jagung","Bawang","Jamur","SausTiram","Cabai"},
         new string[]
-            {"Jagung","Bawang","SausTiram","Cabai"},
+            {"Jagung","Bawang","Telur","Tepung"},
         
         new string[]
-            {"Cincin Bawang","Bawang","Tepung","Minyak"},
+            {"Bawang","Tepung","Minyak"},
         
         new string[]
-            {"Tumis Edamame","Bawang","SausTiram","Cabai"},
+            {"Edamame","Bawang","Kecap","Cabai"},
         new string[]
-            {"Edamame goreng","Bawang","SausTiram","Cabai"},
+            {"Edamame","Bawang","Minyak"},
 
         new string[]
-            {"Telur Rebus","Telur"},
+            {"Nasi","Edamame","Bawang","Kecap","Cabai","Minyak"},
         new string[]
-            {"Telur Ceplok","Bawang","SausTiram","Cabai"},
+            {"Nasi","Jagung","Bawang","Kecap","Cabai","Minyak"},
+
         new string[]
-            {"Telur Dadar","Bawang","SausTiram","Cabai"},
+            {"Telur"},
+        new string[]
+            {"Telur","Minyak"},
+        new string[]
+            {"Telur","Bawang","SausTiram","Minyak"},
         
         new string[]
-            {"Nasi Goreng Lengkap","Tumis Pokchoi Tahu","Selada","Kangkung Tempe","Jagung","Edamame","Nasi","Bawang","Telur Ceplok","Jamur","Kecap","SausTiram","Cabai","Minyak"}
+            {"Nasi","Tumis Pokchoi Tahu","Selada","Kangkung Tempe","Jagung","Edamame","Bawang","Telur Ceplok","Jamur","Kecap","SausTiram","Cabai","Minyak"}
 
 
     };
