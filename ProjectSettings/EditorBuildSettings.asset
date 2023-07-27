@@ -8,12 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: c6a46d01eab49e64b95f8f1cb28fd04d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Kebun_Tanah.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
-    path: Assets/Scenes/Greenhouse.unity
-    guid: b6a11565c3e7228418f733f1d6b53d3e
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/rumah_masak.unity
     guid: 8690ff51eea81bb4cbbe0f11cf29a4f3

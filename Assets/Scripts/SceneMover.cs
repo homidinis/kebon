@@ -20,4 +20,8 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("rumah_masak");
     }
+    public void Kebun_Tanah_2()
+    {
+        SceneManager.LoadScene("Kebun_Tanah_2");
+    }
 }
