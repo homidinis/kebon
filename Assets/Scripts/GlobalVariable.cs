@@ -89,16 +89,16 @@ public class GlobalVariable
     };
     public static string[,] arrayMarket =
     { // 1 ke kanan, 0 ke bawah
-        { "Telur", "Sprites/Kangkung_2", "50" },
-        { "Jamur", "Sprites/Kangkung_1", "100" },
-        { "Kecap", "Sprites/Kangkung_2", "20" },
-        { "SausTiram", "Sprites/Kangkung_2", "50" },
-        { "Tahu", "Sprites/Kangkung_1", "100" },
-        { "Tempe", "Sprites/Kangkung_2", "20" },
-        { "Cabai", "Sprites/Kangkung_2", "50" },
-        { "Margarin", "Sprites/Kangkung_1", "100" },
-        { "Tepung", "Sprites/Kangkung_2", "20" },
-        { "Minyak", "Sprites/Kangkung_2", "20" }
+        { "Telur", "Sprites/makanan/Telur", "50" },
+        { "Jamur", "Sprites/makanan/Jamur", "100" },
+        { "Kecap", "Sprites/makanan/Kecap", "20" },
+        { "SausTiram", "Sprites/makanan/SausTiram", "50" },
+        { "Tahu", "Sprites/makanan/Tahu", "100" },
+        { "Tempe", "Sprites/makanan/Tempe", "20" },
+        { "Cabai", "Sprites/makanan/Cabai", "50" },
+        { "Margarin", "Sprites/makanan/Butter", "100" },
+        { "Tepung", "Sprites/makanan/Tepung", "20" },
+        { "Minyak", "Sprites/makanan/Tepung", "20" }
 
     };
 }
