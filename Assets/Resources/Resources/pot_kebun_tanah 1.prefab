@@ -841,7 +841,7 @@ GameObject:
   - component: {fileID: 3705010695388500235}
   - component: {fileID: 3705010695388500234}
   m_Layer: 5
-  m_Name: pot_kebun_tanah
+  m_Name: pot_kebun_tanah 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
