@@ -98,7 +98,7 @@ public class GlobalVariable
         { "Cabai", "Sprites/makanan/Cabai", "50" },
         { "Margarin", "Sprites/makanan/Butter", "100" },
         { "Tepung", "Sprites/makanan/Tepung", "20" },
-        { "Minyak", "Sprites/makanan/Tepung", "20" }
+        { "Minyak", "Sprites/makanan/Minyak", "20" }
 
     };
 }

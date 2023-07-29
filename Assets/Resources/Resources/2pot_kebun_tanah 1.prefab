@@ -1,5 +1,150 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3064591604982984275
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4924105800324242969}
+  - component: {fileID: 9131945270689387365}
+  - component: {fileID: 4936194025066485839}
+  - component: {fileID: 2998284375351218541}
+  m_Layer: 5
+  m_Name: ButtonPisang
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4924105800324242969
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064591604982984275}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -142.66202}
+  m_LocalScale: {x: 1.792463, y: 2.3700588, z: 1.5586635}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3705010694769924407}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -29.9809, y: -110.3637}
+  m_SizeDelta: {x: 42.8997, y: 31.9316}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &9131945270689387365
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064591604982984275}
+  m_CullTransparentMesh: 1
+--- !u!114 &4936194025066485839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064591604982984275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 243ab7318ddc4f844a5c05ed1f4acf5b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2998284375351218541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3064591604982984275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4936194025066485839}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
+        m_MethodName: PlantPisang
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3705010694769924406}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3705010693574061471
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,7 +158,7 @@ GameObject:
   - component: {fileID: 3705010693574061466}
   - component: {fileID: 3705010693574061465}
   m_Layer: 5
-  m_Name: ButtonBawang
+  m_Name: ButtonLengkeng
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,12 +177,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3705010694769924407}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 39.215103, y: -19.122189}
-  m_SizeDelta: {x: 28.6984, y: 24.1678}
+  m_AnchoredPosition: {x: 90.57479, y: -51.280304}
+  m_SizeDelta: {x: 42.3911, y: 33.6156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010693574061467
 CanvasRenderer:
@@ -67,7 +212,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c8589fa38c8ac244bbfbb8c1abb449ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 45081592463659a41b19067896c546c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -121,9 +266,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6430721261397813178}
-        m_TargetAssemblyTypeName: PlantFunction_Kebun, Assembly-CSharp
-        m_MethodName: PlantBawang
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
+        m_MethodName: PlantLengkeng
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -158,7 +303,7 @@ GameObject:
   - component: {fileID: 3705010693640015229}
   - component: {fileID: 3705010693640015228}
   m_Layer: 5
-  m_Name: ButtonEdamame
+  m_Name: ButtonJambu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,12 +322,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3705010694769924407}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 24.8, y: 34.5}
-  m_SizeDelta: {x: 31.1092, y: 24.1678}
+  m_AnchoredPosition: {x: 69.28189, y: 23.304092}
+  m_SizeDelta: {x: 45.9522, y: 33.6156}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010693640015230
 CanvasRenderer:
@@ -212,7 +357,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ad95cfbdc86c7d24a81835613078a07d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c457cd279307e74a859c3a1c1e91236, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -266,9 +411,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6430721261397813178}
-        m_TargetAssemblyTypeName: PlantFunction_Kebun, Assembly-CSharp
-        m_MethodName: PlantEdamame
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
+        m_MethodName: PlantJambu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -434,9 +579,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3705010694717441339}
-  - component: {fileID: 6430721261397813178}
+  - component: {fileID: 4696782291724505530}
   m_Layer: 0
-  m_Name: PlantFunction_Kebun
+  m_Name: PlantFunction_Kebun_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -457,7 +602,7 @@ Transform:
   m_Father: {fileID: 3705010695388500233}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6430721261397813178
+--- !u!114 &4696782291724505530
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,7 +611,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3705010694717441337}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba94337c2060adf4c8646d0345190266, type: 3}
+  m_Script: {fileID: 11500000, guid: d35462c6dcb88f942acddae9c86dba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Pot: 0
@@ -487,7 +632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3705010694769924407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -500,17 +645,19 @@ RectTransform:
   m_LocalScale: {x: 1.0214467, y: 0.671752, z: 1.0214467}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3705010693574061464}
   - {fileID: 3705010693640015203}
+  - {fileID: 3705010693574061464}
   - {fileID: 3705010695285172266}
+  - {fileID: 7151095004343694877}
+  - {fileID: 4924105800324242969}
   - {fileID: 3705010695395222860}
   m_Father: {fileID: 3705010695388500233}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.05, y: -11.073994}
-  m_SizeDelta: {x: 42.72, y: 100}
+  m_AnchoredPosition: {x: -24.5, y: -0.00001812}
+  m_SizeDelta: {x: 91.3275, y: 136.2836}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010694769924401
 CanvasRenderer:
@@ -671,8 +818,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlantFunction, Assembly-CSharp
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: Harvest
         m_Mode: 1
         m_Arguments:
@@ -696,7 +843,7 @@ GameObject:
   - component: {fileID: 3705010695285172260}
   - component: {fileID: 3705010695285172267}
   m_Layer: 5
-  m_Name: ButtonJagung
+  m_Name: ButtonPepaya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -719,8 +866,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 20.0744, y: -78.09769}
-  m_SizeDelta: {x: 29.0427, y: 22.9571}
+  m_AnchoredPosition: {x: 62.301582, y: -133.31073}
+  m_SizeDelta: {x: 42.8997, y: 31.9316}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010695285172261
 CanvasRenderer:
@@ -750,7 +897,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: df87983eecbf9174f9ffa6a8ee0550b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc157d28d2bcab94fb0ab925971c6e5f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -804,9 +951,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6430721261397813178}
-        m_TargetAssemblyTypeName: PlantFunction_Kebun, Assembly-CSharp
-        m_MethodName: PlantJagung
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
+        m_MethodName: PlantPepaya
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -841,7 +988,7 @@ GameObject:
   - component: {fileID: 3705010695388500235}
   - component: {fileID: 3705010695388500234}
   m_Layer: 5
-  m_Name: pot_kebun_tanah
+  m_Name: 2pot_kebun_tanah 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -955,8 +1102,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6430721261397813178}
-        m_TargetAssemblyTypeName: PlantFunction_Kebun, Assembly-CSharp
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: Toogle
         m_Mode: 1
         m_Arguments:
@@ -1000,7 +1147,7 @@ RectTransform:
   m_Children:
   - {fileID: 3705010693849126455}
   m_Father: {fileID: 3705010694769924407}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1124,8 +1271,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.72, y: 20.21}
-  m_SizeDelta: {x: 80.63, y: 138.42}
+  m_AnchoredPosition: {x: 0.000012159, y: 135.8}
+  m_SizeDelta: {x: 215.1314, y: 308.1184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &848546762152882716
 CanvasRenderer:
@@ -1155,7 +1302,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5ffe9c2c1f52d3e489904edcb531202f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 277934bd4f3a0c943b62b84127245f79, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1165,6 +1312,151 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &5160009733384159673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7151095004343694877}
+  - component: {fileID: 1697331012768222417}
+  - component: {fileID: 4586147076669375616}
+  - component: {fileID: 2771754069176370424}
+  m_Layer: 5
+  m_Name: ButtonRambutan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7151095004343694877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160009733384159673}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -142.66202}
+  m_LocalScale: {x: 1.792463, y: 2.3700588, z: 1.5586635}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3705010694769924407}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -30.235, y: 6.67}
+  m_SizeDelta: {x: 42.3911, y: 33.6156}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1697331012768222417
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160009733384159673}
+  m_CullTransparentMesh: 1
+--- !u!114 &4586147076669375616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160009733384159673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d49eec1ed13088b498595179442de2c6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2771754069176370424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5160009733384159673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 4586147076669375616}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4696782291724505530}
+        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
+        m_MethodName: PlantRambutan
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3705010694769924406}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6209201567488196379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1474,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6137454315557661115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1258,7 +1550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1920505893160057283
 RectTransform:
   m_ObjectHideFlags: 0

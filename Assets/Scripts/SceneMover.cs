@@ -24,4 +24,13 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("Kebun_Tanah_2");
     }
+    public void Dapur()
+    {
+        SceneManager.LoadScene("rumah_masak");
+    }
+    public void RuangTamu()
+    {
+        SceneManager.LoadScene("rumah_komputer");
+    }
+
 }

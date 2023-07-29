@@ -95,7 +95,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         occupier = "Jambu";
         timer = timerDefaultJambu;
         price = priceDefaultJambu;
-        Debug.Log("Bought Jambu");
         Buy();
     }
     public void PlantLengkeng()
@@ -103,7 +102,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         occupier = "Lengkeng";
         timer = timerDefaultLengkeng;
         price = priceDefaultLengkeng;
-        
         Buy();
     }
     public void PlantPepaya()
@@ -111,7 +109,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         occupier = "Pepaya"; //set Pepaya here jadi kode dibawah tau kalau occupier sudah jadi Pepaya 
         timer = timerDefaultPepaya;
         price = priceDefaultPepaya;
-        
         Buy();
     }
     public void PlantRambutan()
@@ -119,7 +116,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         occupier = "Rambutan"; //set Pepaya here jadi kode dibawah tau kalau occupier sudah jadi Pepaya 
         timer = timerDefaultRambutan;
         price = priceDefaultRambutan;
-        
         Buy();
     }
     public void PlantPisang()
@@ -127,7 +123,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         occupier = "Pisang"; //set Pepaya here jadi kode dibawah tau kalau occupier sudah jadi Pepaya 
         timer = timerDefaultPisang;
         price = priceDefaultPisang;
-        
         Buy();
     }
 
@@ -141,7 +136,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
         {
             Planting();
-            
             Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
             string occupier = PlayerPrefs.GetString(plantingSpot);
             Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
@@ -196,6 +190,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         state = PlayerPrefs.GetInt("State_Kebun2"+Pot);
         timer = PlayerPrefs.GetInt("Timer_Kebun2"+Pot);
         occupier = PlayerPrefs.GetString("PlantingSpot2"+Pot);
+        Debug.Log("Occupier " + occupier);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         Plantspot2Sprite.GetComponent<Image>().enabled = true;
 
@@ -263,6 +258,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         }
         else if(occupier == "Pisang")
         {
+            Debug.Log("Plating Pisang");
             if (timer <= timerStatePisang3)
             {   
                 Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pisang_3");
