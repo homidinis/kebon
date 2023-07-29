@@ -101,4 +101,7 @@ public class GlobalVariable
         { "Minyak", "Sprites/makanan/Minyak", "20" }
 
     };
+
+
+    public static int pupukBuff;
 }

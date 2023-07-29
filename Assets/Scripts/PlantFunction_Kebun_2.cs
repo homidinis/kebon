@@ -19,30 +19,26 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     int priceDefaultRambutan = 150;
     int priceDefaultPisang = 150;
 
-    int timerDefaultJambu = 10;
-        int timerStateJambu1 = 10;
-        int timerStateJambu2 = 5;
-        int timerStateJambu3 = 1;
+    int timerDefaultJambu = 10 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultLengkeng = 10;
-        int timerStateLengkeng1 = 10;
-        int timerStateLengkeng2 = 5;
-        int timerStateLengkeng3 = 1;
+        int timerStateJambu2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateJambu3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultPepaya = 10;
-        int timerStatePepaya1 = 10;
-        int timerStatePepaya2 = 5;
-        int timerStatePepaya3 = 1;
+    int timerDefaultLengkeng = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateLengkeng2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateLengkeng3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultRambutan = 10;
-        int timerStateRambutan1 = 10;
-        int timerStateRambutan2 = 5;
-        int timerStateRambutan3 = 1;
+    int timerDefaultPepaya = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePepaya2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePepaya3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultPisang = 10;
-        int timerStatePisang1 = 10;
-        int timerStatePisang2 = 5;
-        int timerStatePisang3 = 1;    
+    int timerDefaultRambutan = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateRambutan2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateRambutan3 = 1 * (GlobalVariable.pupukBuff / 100);
+
+    int timerDefaultPisang = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePisang2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePisang3 = 1 * (GlobalVariable.pupukBuff / 100);    
     int timerDefault;
 
     //string[] PotArray = { "Pot1", "Pot2", "Pot3", "Pot4", "Pot5", "Pot6", "Pot7", "Pot8", "Pot9", "Pot10", "Pot11", "Pot12" }; //put pots in an array

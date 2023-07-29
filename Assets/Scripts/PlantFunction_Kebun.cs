@@ -17,20 +17,17 @@ public class PlantFunction_Kebun : MonoBehaviour
     int priceDefaultBawang = 100;
     int priceDefaultEdamame = 150;
 
-    int timerDefaultJagung = 10;
-        int timerStateJagung1 = 10;
-        int timerStateJagung2 = 5;
-        int timerStateJagung3 = 1;
+    int timerDefaultJagung = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateJagung2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateJagung3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultBawang = 10;
-        int timerStateBawang1 = 10;
-        int timerStateBawang2 = 5;
-        int timerStateBawang3 = 1;
+    int timerDefaultBawang = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateBawang2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateBawang3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultEdamame = 10;
-        int timerStateEdamame1 = 10;
-        int timerStateEdamame2 = 5;
-        int timerStateEdamame3 = 1;
+    int timerDefaultEdamame = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateEdamame2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateEdamame3 = 1 * (GlobalVariable.pupukBuff / 100);
 
     int timerDefault;
 

@@ -17,20 +17,17 @@ public class PlantFunction : MonoBehaviour
     int priceDefaultPokChoi = 100;
     int priceDefaultSelada = 150;
 
-    int timerDefaultKangkung = 10;
-        int timerStateKangkung1 = 10;
-        int timerStateKangkung2 = 5;
-        int timerStateKangkung3 = 1;
+    int timerDefaultKangkung = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateKangkung2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateKangkung3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultPokChoi = 10;
-        int timerStatePokChoi1 = 10;
-        int timerStatePokChoi2 = 5;
-        int timerStatePokChoi3 = 1;
+    int timerDefaultPokChoi = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePokChoi2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStatePokChoi3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultSelada = 10;
-        int timerStateSelada1 = 10;
-        int timerStateSelada2 = 5;
-        int timerStateSelada3 = 1;
+    int timerDefaultSelada = 10 * (GlobalVariable.pupukBuff / 100);
+        int timerStateSelada2 = 5 * (GlobalVariable.pupukBuff / 100);
+        int timerStateSelada3 = 1 * (GlobalVariable.pupukBuff / 100);
 
     int timerDefault;
 
