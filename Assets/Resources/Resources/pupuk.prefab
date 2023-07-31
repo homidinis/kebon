@@ -1,5 +1,50 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &334394541678718016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7955918745697735434}
+  - component: {fileID: 7680878449415702576}
+  m_Layer: 0
+  m_Name: PupukFunction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7955918745697735434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334394541678718016}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 66.31708, y: 69.929596, z: -72.860825}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3705010695388500233}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7680878449415702576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334394541678718016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa046cd4aef89842b751f577071f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Pot: 0
 --- !u!1 &3705010693574061471
 GameObject:
   m_ObjectHideFlags: 0
@@ -18,7 +63,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3705010693574061464
 RectTransform:
   m_ObjectHideFlags: 0
@@ -36,8 +81,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 232.06566, y: 48.80886}
-  m_SizeDelta: {x: 76.5648, y: 54.8341}
+  m_AnchoredPosition: {x: 149, y: -16}
+  m_SizeDelta: {x: 80.5319, y: 83.1199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010693574061467
 CanvasRenderer:
@@ -67,7 +112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 45081592463659a41b19067896c546c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5e5b50dcb66aae545b2d91644cff7aac, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -121,7 +166,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4696782291724505530}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: PlantLengkeng
         m_Mode: 1
@@ -163,7 +208,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3705010693640015203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -181,8 +226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193.60747, y: 170.47171}
-  m_SizeDelta: {x: 82.9967, y: 54.8341}
+  m_AnchoredPosition: {x: 147.11, y: 201.89792}
+  m_SizeDelta: {x: 84.311, y: 85.8572}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010693640015230
 CanvasRenderer:
@@ -212,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 6c457cd279307e74a859c3a1c1e91236, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13b83127c0299c44a8f440354313ea52, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -266,9 +311,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4696782291724505530}
-        m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
-        m_MethodName: PlantJambu
+      - m_Target: {fileID: 7680878449415702576}
+        m_TargetAssemblyTypeName: Pupuk, Assembly-CSharp
+        m_MethodName: PlantPupukA
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -425,51 +470,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &3705010694717441337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3705010694717441339}
-  - component: {fileID: 4696782291724505530}
-  m_Layer: 0
-  m_Name: PlantFunction_Kebun_2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3705010694717441339
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3705010694717441337}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3705010695388500233}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4696782291724505530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3705010694717441337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35462c6dcb88f942acddae9c86dba18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Pot: 0
 --- !u!1 &3705010694769924406
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4696782291724505530}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: Harvest
         m_Mode: 1
@@ -701,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3705010695285172266
 RectTransform:
   m_ObjectHideFlags: 0
@@ -719,8 +719,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 181, y: -85}
-  m_SizeDelta: {x: 77.4833, y: 52.0872}
+  m_AnchoredPosition: {x: 147.10999, y: -226.26273}
+  m_SizeDelta: {x: 92.5584, y: 84.9351}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3705010695285172261
 CanvasRenderer:
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc157d28d2bcab94fb0ab925971c6e5f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa2f71e0e49393e4087e9e5d3b6305a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4696782291724505530}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: PlantPepaya
         m_Mode: 1
@@ -859,7 +859,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3705010694717441339}
+  - {fileID: 7955918745697735434}
   - {fileID: 1920505893160057283}
   - {fileID: 6137454315557661115}
   - {fileID: 8196961782521406344}
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4696782291724505530}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlantFunction_Kebun_2, Assembly-CSharp
         m_MethodName: Toogle
         m_Mode: 1
@@ -1124,8 +1124,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000012159, y: 135.8}
-  m_SizeDelta: {x: 215.1314, y: 308.1184}
+  m_AnchoredPosition: {x: 2.05, y: -23.511}
+  m_SizeDelta: {x: 140.167, y: 183.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &848546762152882716
 CanvasRenderer:
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 277934bd4f3a0c943b62b84127245f79, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd5ae584e0791f144b644d44e12b4da2, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1

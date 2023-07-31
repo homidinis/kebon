@@ -32,5 +32,9 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("rumah_komputer");
     }
+    public void Rumah_Pupuk()
+    {
+        SceneManager.LoadScene("rumah_pupuk");
+    }
 
 }

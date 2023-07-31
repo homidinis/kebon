@@ -42,7 +42,7 @@ public class InventoryHandler : MonoBehaviour
     {
         kangkungText.text = "" + PlayerPrefs.GetInt("Kangkung");
         seladaText.text = "" + PlayerPrefs.GetInt("Selada");
-        pokchoiText.text = "" + PlayerPrefs.GetInt("Pokchoi")
+        pokchoiText.text = "" + PlayerPrefs.GetInt("Pokchoi");
         JagungText.text = "" + PlayerPrefs.GetInt("Kangkung");
         BawangText.text = "" + PlayerPrefs.GetInt("Selada");
         EdamameText.text = "" + PlayerPrefs.GetInt("Pokchoi");
