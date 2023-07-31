@@ -19,6 +19,9 @@ public class Masak : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.SetInt("Jagung",1);
+        PlayerPrefs.SetInt("Margarin",1);
+       
         Debug.Log(PlayerPrefs.GetInt("Susu"));
         Debug.Log("Get Length 1: " + GlobalVariable.arrayResep.GetLength(1) + " Get Length 0: " + GlobalVariable.arrayResep.GetLength(0));
         Debug.Log(GlobalVariable.arrayResep.GetLength(0));
@@ -91,6 +94,9 @@ public class Masak : MonoBehaviour
                 PlayerPrefs.SetInt(GlobalVariable.arrayIngredient[i][j], bahan); //reduce bahan by 1 and set playerpref of that ingredient
                 anim.Play("animasiMasak");
                 Debug.Log("Animation played");
+                plate = GameObject.Find("plate");
+                //set plate as cooked food
+                //activate plate in animation
                 //open cooking animation
                 int jumlahMakanan = PlayerPrefs.GetInt(GlobalVariable.arrayResep[i, 0]); //resep yang bahannya masakan lain bagaimana?
                 jumlahMakanan++;

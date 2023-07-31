@@ -103,5 +103,5 @@ public class GlobalVariable
     };
 
 
-    public static int pupukBuff;
+    public static int pupukBuff = 100;
 }
