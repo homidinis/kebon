@@ -36,5 +36,13 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("rumah_pupuk");
     }
+    public void Credit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
+    public void Library()
+    {
+        SceneManager.LoadScene("Library");
+    }
 
 }

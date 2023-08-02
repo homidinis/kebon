@@ -94,7 +94,7 @@ public class Masak : MonoBehaviour
                 PlayerPrefs.SetInt(GlobalVariable.arrayIngredient[i][j], bahan); //reduce bahan by 1 and set playerpref of that ingredient
                 anim.Play("animasiMasak");
                 Debug.Log("Animation played");
-                plate = GameObject.Find("plate");
+                // plate = GameObject.Find("plate");
                 //set plate as cooked food
                 //activate plate in animation
                 //open cooking animation
