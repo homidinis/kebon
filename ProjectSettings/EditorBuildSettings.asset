@@ -18,9 +18,27 @@ EditorBuildSettings:
     path: Assets/Scenes/rumah_masak.unity
     guid: 8690ff51eea81bb4cbbe0f11cf29a4f3
   - enabled: 1
+    path: Assets/Scenes/Inventory.unity
+    guid: ce417517fd29b6845b4cbd81abdc62a0
+  - enabled: 1
     path: Assets/Scenes/rumah_komputer.unity
     guid: 40aeac0c7f87163448792b9d1e051958
   - enabled: 1
     path: Assets/Scenes/Kebun_Tanah_2.unity
     guid: b93397206ddb95a478137254afd07e57
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: a5f8e048bf181b8418c845950a5f271b
+  - enabled: 1
+    path: Assets/Scenes/Greenhouse.unity
+    guid: fb3e63a5b789c2f45a9dd2dea576303e
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 16c97d03197dd204692f7ccb6dc76acf
+  - enabled: 1
+    path: Assets/Scenes/Library.unity
+    guid: 40e6be6ebae10604aab0f04bda76e34e
   m_configObjects: {}
