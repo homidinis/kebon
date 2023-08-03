@@ -48,7 +48,14 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("Sawah");
     }
-    public void Start()
+
+    public void Inventory()
+    {
+        SceneManager.LoadScene("Inventory");
+    }
+
+
+    public void StartScreen()
     {
         SceneManager.LoadScene("StartScreen");
     }
