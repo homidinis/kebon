@@ -3,6 +3,18 @@ using System.Collections.Generic;
 
 public class GlobalVariable
 {
+    public static string[,] arrayLibraryButton =
+    {
+        {"Kangkung","Sprites/Kangkung_3"},
+        {"Pokchoi","Sprites/Pokchoi_3"},
+        {"Selada","Sprites/Selada_3"},
+    };
+    public static string[,] arrayLibrary =
+    {
+        {"Kangkung", "Sprites/Kangkung_3","Kangkung adalah sejenis sayuran hijau yang populer di berbagai masakan, terutama di Asia Tenggara. Di beberapa negara, kangkung juga dikenal dengan sebutan \"water spinach\" atau \"morning glory\" dalam bahasa Inggris. Nama ilmiah dari kangkung adalah Ipomoea aquatica.Manfaat kangkung contohnya: Kaya nutrisi\r\nMeningkatkan sistem kekebalan tubuh dengan vitamin C\r\nMenjaga keseyhatan tulang dengan kandungan vitamin K dan kalsium\r\nMenjaga kesehatan jantung dengan kandungan potasium\r\nMembantu proses pencernaan dengan kandungan serat\r\nMembantu kontrol berat badan dengan kandungan kalori yang rendah" },
+        {"Pokchoi", "Sprites/Pokchoi_3","Pokchoi, juga dikenal sebagai bok choy atau sawi hijau, adalah jenis sayuran yang termasuk dalam keluarga kubis-kubisan atau Brassicaceae. Tanaman ini memiliki daun hijau gelap yang lebar dan tangkai putih yang berdaging. Pokchoi biasanya tumbuh dalam bentuk daun bertingkat, di mana daun lebih besar tumbuh di bagian luar dan daun yang lebih kecil tumbuh di bagian dalam. Asal-usul pokchoi berasal dari Asia Timur, khususnya dari Cina, dan telah menjadi salah satu sayuran populer dalam masakan Asia. Saat ini, pokchoi juga banyak ditemukan dan digunakan dalam masakan di berbagai belahan dunia.\r\n\r\nPokchoi memiliki rasa yang ringan dan sedikit manis, serta tekstur yang renyah saat dimasak. Sayuran ini sangat serbaguna dan dapat dimasak dalam berbagai cara, seperti direbus, dikukus, ditumis, atau digunakan dalam sup dan hidangan panggang.\r\n\r\nKarena kandungan nutrisi yang kaya, pokchoi adalah sayuran yang sehat dan bermanfaat untuk tubuh. Ia kaya akan vitamin dan mineral seperti vitamin A, vitamin C, vitamin K, kalsium, zat besi, magnesium, dan serat, yang semuanya berkontribusi pada manfaat kesehatan yang beragam seperti mendukung kesehatan tulang, meningkatkan sistem kekebalan tubuh, dan menjaga kesehatan jantung dan kulit." },
+        {"Selada", "Sprites/Selada_3","Selada adalah sejenis sayuran daun yang sering digunakan dalam berbagai hidangan dan salad. Sayuran ini memiliki daun hijau yang lembut dan renyah dengan bentuk dan ukuran yang bervariasi tergantung pada jenisnya. Selada berasal dari keluarga Asteraceae dan telah lama dibudidayakan sebagai sayuran. Selada merupakan sumber nutrisi yang baik, terutama vitamin A, vitamin C, dan serat. Ia rendah kalori sehingga cocok sebagai pilihan makanan sehat bagi mereka yang ingin menjaga berat badan atau sedang dalam program penurunan berat badan." },
+    };
     public static string[,] arrayResep =
     { // 1 ke kanan, 0 ke bawah
         { "Pokchoi Siram Jamur", "Sprites/makanan/Makan/Makan_Pokchoi_Jamur", "Pokchoi x1\nBawang x1\nJamur x1\nKecap x1"},

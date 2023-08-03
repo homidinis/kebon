@@ -183,8 +183,8 @@ public class SawahPlantFunction : MonoBehaviour
             Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
             if (occupier == "Padi")
             {
-                int lastPadi = PlayerPrefs.GetInt("Padi");
-                PlayerPrefs.SetInt("Padi", lastPadi + 4); //increment inventory
+                int lastPadi = PlayerPrefs.GetInt("Nasi");
+                PlayerPrefs.SetInt("Nasi", lastPadi + 4); //increment inventory
             }
             harvestButton.SetActive(false);
         }
