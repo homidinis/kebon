@@ -57,8 +57,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.SetInt("Gold",5000);
-        //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         Plantspot2Sprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         Plantspot2Choices = transform.parent.gameObject.transform.GetChild(5).gameObject;
@@ -224,17 +222,16 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         {
             if (timer <= timerStatePepaya3)
             {   
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pepaya_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_3");
             }
             else if (timer <= timerStatePepaya2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pepaya_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pepaya_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_1");
             }
-
         }
         else if(occupier == "Rambutan")
         {
@@ -254,7 +251,6 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         }
         else if(occupier == "Pisang")
         {
-            Debug.Log("Plating Pisang");
             if (timer <= timerStatePisang3)
             {   
                 Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pisang_3");

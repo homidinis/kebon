@@ -25,8 +25,8 @@ public class PlantKangkung_DEPRECATED: MonoBehaviour
     {
         childImage = GameObject.Find("kkk");  //get first child, etc
         childButton = this.transform.GetChild(1).gameObject;
-        PlayerPrefs.SetInt("Gold", 500);
-        PlayerPrefs.DeleteKey("Pot1");
+        //PlayerPrefs.SetInt("Gold", 500);
+        //PlayerPrefs.DeleteKey("Pot1");
     }
 
     // Update is called once per frame

@@ -11,7 +11,6 @@ public class Market : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("Susu"));
         Debug.Log("Get Length 1: " + GlobalVariable.arrayMarket.GetLength(1) + " Get Length 0: " + GlobalVariable.arrayMarket.GetLength(0));
         for(int i = 0; i < GlobalVariable.arrayMarket.GetLength(0); i++) 
         {

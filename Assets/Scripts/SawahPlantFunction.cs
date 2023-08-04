@@ -146,16 +146,15 @@ public class SawahPlantFunction : MonoBehaviour
         {
             if (timer <= timerStatePadi3)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pDI/Tanaman_Padi_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/Padi/Tanaman_Padi_3");
             }
             else if (timer <= timerStatePadi2)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pDI/Tanaman_Padi_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/Padi/Tanaman_Padi_2");
             }
             else
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pDI/Tanaman_Padi_1");
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pDI/Tanaman_Padi_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/Padi/Tanaman_Padi_1");
             }
 
         }

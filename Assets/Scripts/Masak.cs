@@ -5,8 +5,6 @@ using UnityEngine.UI;
 using TMPro;
 public class Masak : MonoBehaviour
 {
-
-
     public Animator anim;
     public GameObject btnObject;
     public GameObject canvasObject;
@@ -19,10 +17,8 @@ public class Masak : MonoBehaviour
     // Start is called before the first frame update
     void Start()    
     {
-        PlayerPrefs.SetInt("Jagung",1);
-        PlayerPrefs.SetInt("Margarin",1);
-       
-        Debug.Log(PlayerPrefs.GetInt("Susu"));
+        //PlayerPrefs.SetInt("Jagung",1);
+        //PlayerPrefs.SetInt("Margarin",1);
         Debug.Log("Get Length 1: " + GlobalVariable.arrayResep.GetLength(1) + " Get Length 0: " + GlobalVariable.arrayResep.GetLength(0));
         Debug.Log(GlobalVariable.arrayResep.GetLength(0));
         for (int i = 0; i < GlobalVariable.arrayResep.GetLength(0); i++)
@@ -45,18 +41,13 @@ public class Masak : MonoBehaviour
 
             Image myObjImage = myObj.transform.Find("Image").GetComponent<Image>();
             myObjImage.sprite = Resources.Load<Sprite>(GlobalVariable.arrayResep[i, 1]);
-            PlayerPrefs.SetInt("Pokchoi", 0);
-            PlayerPrefs.SetInt("Bawang", 0);
-            PlayerPrefs.SetInt("Jamur", 0);
-            PlayerPrefs.SetInt("Kecap", 0);
+            //PlayerPrefs.SetInt("Pokchoi", 0);
+            //PlayerPrefs.SetInt("Bawang", 0);
+            //PlayerPrefs.SetInt("Jamur", 0);
+            //PlayerPrefs.SetInt("Kecap", 0);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     void OpenRecipe(int j)
     {
         recipePanel.SetActive(false);
