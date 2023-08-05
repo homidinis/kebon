@@ -2549,7 +2549,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: deaf7597ef5b11f48ac10d218bfb349d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6ee0e8a398ff7fc42918ab54776b4c53, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -3258,7 +3258,7 @@ GameObject:
   - component: {fileID: 2027939393}
   - component: {fileID: 2027939392}
   m_Layer: 5
-  m_Name: Button
+  m_Name: ExitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
