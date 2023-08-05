@@ -194,7 +194,7 @@ public class SawahPlantFunction : MonoBehaviour
         }
 
         PlayerPrefs.DeleteKey("Spot" + Pot);
-        NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/placeholder");
+        NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested! " + occupier);
     }
 }

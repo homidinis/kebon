@@ -248,7 +248,7 @@ PrefabInstance:
     - target: {fileID: 3705010695388500232, guid: e099ff2c32c4d9840912c62f198c6641,
         type: 3}
       propertyPath: m_Name
-      value: REV-Pot-Kebun-Tanah Variant
+      value: PlantSpotGardenField
       objectReference: {fileID: 0}
     - target: {fileID: 3705010695388500233, guid: e099ff2c32c4d9840912c62f198c6641,
         type: 3}

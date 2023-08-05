@@ -192,60 +192,60 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         {
             if (timer <= timerStateJambu3)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Jambu_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Jambu_3");
             }
             else if (timer <= timerStateJambu2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Jambu_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Jambu_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Jambu_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Jambu_1");
             }
         }
         else if(occupier == "Lengkeng") //correct spelling?
         {
             if (timer <= timerStateLengkeng3)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Lengkeng_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Lengkeng_3");
             }
             else if (timer <= timerStateLengkeng2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Lengkeng_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Lengkeng_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Lengkeng_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Lengkeng_1");
             }
         }
         else if(occupier == "Pepaya")
         {
             if (timer <= timerStatePepaya3)
             {   
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Papaya_3");
             }
             else if (timer <= timerStatePepaya2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Papaya_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Payaya_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Papaya_1");
             }
         }
         else if(occupier == "Rambutan")
         {
             if (timer <= timerStateRambutan3)
             {   
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Rambutan_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Rambutan_3");
             }
             else if (timer <= timerStateRambutan2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Rambutan_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Rambutan_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Rambutan_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Rambutan_1");
             }
 
         }
@@ -253,15 +253,15 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         {
             if (timer <= timerStatePisang3)
             {   
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pisang_3");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Pisang_3");
             }
             else if (timer <= timerStatePisang2)
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pisang_2");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Pisang_2");
             }
             else
             {
-                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Pohon_Pisang_1");
+                Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Pohon_Pisang_1");
             }
 
         }
@@ -321,7 +321,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         }
 
         PlayerPrefs.DeleteKey("PlantingSpot2"+Pot);
-        Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/placeholder");
+        Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested " + occupier);
     }
 

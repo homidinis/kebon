@@ -553,7 +553,7 @@ GameObject:
   - component: {fileID: 141132459}
   - component: {fileID: 141132458}
   m_Layer: 5
-  m_Name: dapurFG
+  m_Name: dapurBeras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -572,7 +572,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 865349811}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -599,7 +599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: eb29dc091136644479f91a2ff9b96602, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c7e9bd174e77d8049a678cc32f112de4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -764,7 +764,7 @@ GameObject:
   - component: {fileID: 177092481}
   - component: {fileID: 177092480}
   m_Layer: 5
-  m_Name: dapurMGback
+  m_Name: dapurKarakter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -783,7 +783,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 865349811}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -810,9 +810,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 2eb7c6e261f60c14f9bc7196e26f9cc6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8aaa1a1f8e500ff43bde60ce3b590546, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 561742222}
   - component: {fileID: 561742221}
   m_Layer: 5
-  m_Name: dapurMG front
+  m_Name: dapurPerkakas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1462,7 +1462,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 865349811}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f2c2fc0b63e32a145932c5044faf27a7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5a17d945fccf4ca4e903fe780b91b50b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1656,11 +1656,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1969438200}
-  - {fileID: 177092479}
-  - {fileID: 1854611916}
-  - {fileID: 141132457}
-  - {fileID: 1499724364}
   - {fileID: 561742220}
+  - {fileID: 1854611916}
+  - {fileID: 177092479}
+  - {fileID: 1499724364}
+  - {fileID: 141132457}
   m_Father: {fileID: 1650282323}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2750,7 +2750,7 @@ GameObject:
   - component: {fileID: 1499724366}
   - component: {fileID: 1499724365}
   m_Layer: 5
-  m_Name: dapurMG (1)mid
+  m_Name: dapurMejaDepan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2796,7 +2796,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4e4542b995d874e48a2e6a1d668f4272, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b70245c30a9ef454caa0390e488ea0e3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3226,7 +3226,7 @@ GameObject:
   - component: {fileID: 1854611918}
   - component: {fileID: 1854611917}
   m_Layer: 5
-  m_Name: Image
+  m_Name: dapurKulkas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3249,8 +3249,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.54, y: 0}
-  m_SizeDelta: {x: 523.92, y: 382.3}
+  m_AnchoredPosition: {x: 0.0000076294, y: 0.000019073}
+  m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1854611917
 Animator:
@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 418964813a63bfd40aa7c467f6cd7e18, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ffe4af8c7528214d807b53ce68fc402, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3577,7 +3577,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a910eeb3eba69af4aa4185601c09d5e2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aa1a1478929b7cd44a0188ee3168cd6a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

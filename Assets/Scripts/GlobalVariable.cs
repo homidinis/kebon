@@ -36,34 +36,34 @@ public class GlobalVariable
     };
     public static string[,] arrayResep =
     { // 1 ke kanan, 0 ke bawah
-        { "Pokchoi Siram Jamur", "Sprites/makanan/Makan/Makan_Pokchoi_Jamur", "Pokchoi x1\nBawang x1\nJamur x1\nKecap x1"},
-        { "Pokchoi Saus Tiram", "Sprites/makanan/Makan/Makan_Pokchoi_SausTiram","Pokchoi x1\nBawang x1\nKecap x1\nSaus Tiram x1"},
-        { "Tumis Pakchoi Tahu", "Sprites/makanan/Makan/Makan_Pokchoi_Tahu","Pokchoi x1\nBawang x1\nSaus Tiram x1\nTahu x1\nCabai"},
+        { "Pokchoi Siram Jamur", "icon/makanan/Makan_Pokchoi_Jamur", "Pokchoi x1\nBawang x1\nJamur x1\nKecap x1"},
+        { "Pokchoi Saus Tiram", "icon/makanan/Makan_Pokchoi_SausTiram","Pokchoi x1\nBawang x1\nKecap x1\nSaus Tiram x1"},
+        { "Tumis Pakchoi Tahu", "icon/makanan/Makan_Pokchoi_Tahu","Pokchoi x1\nBawang x1\nSaus Tiram x1\nTahu x1\nCabai"},
         
-        { "Tumis Selada Jamur", "Sprites/makanan/Makan/Makan_Selada_TumisJamur", "Selada x1\n Bawang x1 \n Jamur x1\n Kecap x1"},
-        { "Telur Dadar Selada","Sprites/makanan/Makan/Makan_Selada_TelurGulung","Selada x1\n Telur x1\n Kecap x1\n Margarin x1"},
+        { "Tumis Selada Jamur", "icon/makanan/Makan_Selada_TumisJamur", "Selada x1\n Bawang x1 \n Jamur x1\n Kecap x1"},
+        { "Telur Dadar Selada","icon/makanan/Makan_Selada_TelurGulung","Selada x1\n Telur x1\n Kecap x1\n Margarin x1"},
 
-        { "Kangkung Tempe","Sprites/makanan/Makan/Makan_Kangkung_TumisTempe","Kangkung x1 \n Bawang x1 \n Saus Tiram x1 \n Tempe x1" },
-        { "Cah Kangkung","Sprites/makanan/Makan/Makan_Kangkung_Tumis","Kangkung x1 \n Bawang x1 \n Saus Tiram x1\n Cabai x1"},
+        { "Kangkung Tempe","icon/makanan/Makan_Kangkung_TumisTempe","Kangkung x1 \n Bawang x1 \n Saus Tiram x1 \n Tempe x1" },
+        { "Cah Kangkung","icon/makanan/Makan_Kangkung_Tumis","Kangkung x1 \n Bawang x1 \n Saus Tiram x1\n Cabai x1"},
 
-        { "Jagung Bakar", "Sprites/makanan/Makan/Makan_Jagung_Bakar","Jagung x1\n Margarin x1" },
-        { "Tumis Jagung Bakar","Sprites/makanan/Makan/Makan_Jagung_Tumis","Jagung Bakar x1\n Bawang x1\n Cabai x1" },
-        { "Jagung Jamur Asam Manis","Sprites/makanan/Makan/Makan_Jagung_SiramJamur","Jagung x1 \n Jamur x1 \n Saus Tiram x1 \n Cabai x1 \n"},
-        { "Sup Jagung","Sprites/makanan/Makan/Makan_Jagung_Sup","Jagung x1 \n Bawang x1 \n Telur x1 \n Tepung x1"},
+        { "Jagung Bakar", "icon/makanan/Makan_Jagung_Bakar","Jagung x1\n Margarin x1" },
+        { "Tumis Jagung Bakar","icon/makanan/Makan_Jagung_Tumis","Jagung Bakar x1\n Bawang x1\n Cabai x1" },
+        { "Jagung Jamur Asam Manis","icon/makanan/Makan_Jagung_SiramJamur","Jagung x1 \n Jamur x1 \n Saus Tiram x1 \n Cabai x1 \n"},
+        { "Sup Jagung","icon/makanan/Makan_Jagung_Sup","Jagung x1 \n Bawang x1 \n Telur x1 \n Tepung x1"},
 
-        { "Cincin Bawang","Sprites/makanan/Makan/Makan_Bawang_Goreng","Bawang x1 \n Tepung x1 \n Minyak x1"},
+        { "Cincin Bawang","icon/makanan/Makan_Bawang_Goreng","Bawang x1 \n Tepung x1 \n Minyak x1"},
 
-        { "Tumis Edamame","Sprites/makanan/Makan/Makan_Edamame_Tumis", "Edamame x1 \n Bawang x1 \n Kecap x1 \n Margarin x1"},
-        { "Edamame Goreng","Sprites/makanan/Makan/Makan_Edamame_Goreng" , "Edamame x1 \n Bawang x1 \n Minyak x1 \n"},
+        { "Tumis Edamame","icon/makanan/Makan_Edamame_Tumis", "Edamame x1 \n Bawang x1 \n Kecap x1 \n Margarin x1"},
+        { "Edamame Goreng","icon/makanan/Makan_Edamame_Goreng" , "Edamame x1 \n Bawang x1 \n Minyak x1 \n"},
 
-        { "Nasi Goreng Edamame","Sprites/makanan/Makan/Makan_NasiGoreng_edamame" , "Nasi x1 \n Edamame x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
-        { "Nasi Goreng Jagung","Sprites/makanan/Makan/Makan_NasiGoreng_Jagung" , "Nasi x1 \n Jagung x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
+        { "Nasi Goreng Edamame","icon/makanan/Makan_NasiGoreng_edamame" , "Nasi x1 \n Edamame x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
+        { "Nasi Goreng Jagung","icon/makanan/Makan_NasiGoreng_Jagung" , "Nasi x1 \n Jagung x1 \n Bawang x1 \n Kecap x1 \n Cabai x1 \n Minyak x1"},
 
-        { "Telur Rebus","Sprites/makanan/Makan/Makan_Telur_Rebus","Telur x1" },
-        { "Telur Ceplok","Sprites/makanan/Makan/Makan_Telur_Ceplok","Telur x1 \n Minyak x1" },
-        { "Telur Dadar","Sprites/makanan/Makan/Makan_Telur_Gulung" , "Telur x1 \n Bawang x1 \n Minyak x1 \n Saus Tiram x1"},
+        { "Telur Rebus","icon/makanan/Makan_Telur_Rebus","Telur x1" },
+        { "Telur Ceplok","icon/makanan/Makan_Telur_Ceplok","Telur x1 \n Minyak x1" },
+        { "Telur Dadar","icon/makanan/Makan_Telur_Gulung" , "Telur x1 \n Bawang x1 \n Minyak x1 \n Saus Tiram x1"},
 
-        { "Nasi Goreng Lengkap","Sprites/makanan/Makan/Makan_NasiGoreng_Telur.png","Nasi x1 \n Tumis Pokchoi Tahu x1 \n Selada x1 \n Kangkung x1 \n Jagung x1 \n Edamame x1 \n Bawang x1 \n Telur x1 \n Jamur x1 \n Kecap x1 \n Saus Tiram x1 \n Cabai x1 \n Minyak x1 \n" }
+        { "Nasi Goreng Lengkap","icon/makanan/Makan_NasiGoreng_Telur","Nasi x1 \n Tumis Pokchoi Tahu x1 \n Selada x1 \n Kangkung x1 \n Jagung x1 \n Edamame x1 \n Bawang x1 \n Telur x1 \n Jamur x1 \n Kecap x1 \n Saus Tiram x1 \n Cabai x1 \n Minyak x1 \n" }
     };
     public static string[][] arrayIngredient =
     {
@@ -120,16 +120,16 @@ public class GlobalVariable
     };
     public static string[,] arrayMarket =
     { // 1 ke kanan, 0 ke bawah
-        { "Telur", "Sprites/makanan/Telur", "50" },
-        { "Jamur", "Sprites/makanan/Jamur", "100" },
-        { "Kecap", "Sprites/makanan/Kecap", "20" },
-        { "SausTiram", "Sprites/makanan/SausTiram", "50" },
-        { "Tahu", "Sprites/makanan/Tahu", "100" },
-        { "Tempe", "Sprites/makanan/Tempe", "20" },
-        { "Cabai", "Sprites/makanan/Cabai", "50" },
-        { "Margarin", "Sprites/makanan/Butter", "100" },
-        { "Tepung", "Sprites/makanan/Tepung", "20" },
-        { "Minyak", "Sprites/makanan/Minyak", "20" }
+        { "Telur", "icon/bahan/Telur", "50" },
+        { "Jamur", "icon/bahan/Jamur", "100" },
+        { "Kecap", "icon/bahan/Kecap", "20" },
+        { "SausTiram", "icon/bahan/SausTiram", "50" },
+        { "Tahu", "icon/bahan/Tahu", "100" },
+        { "Tempe", "icon/bahan/Tempe", "20" },
+        { "Cabai", "icon/bahan/Cabai", "50" },
+        { "Margarin", "icon/bahan/Butter", "100" },
+        { "Tepung", "icon/bahan/Tepung", "20" },
+        { "Minyak", "icon/bahan/Minyak", "20" }
 
     };
 

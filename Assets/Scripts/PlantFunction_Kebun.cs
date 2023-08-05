@@ -172,45 +172,45 @@ public class PlantFunction_Kebun : MonoBehaviour
         {
             if (timer <= timerStateJagung3)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Jagung_3");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Jagung_3");
             }
             else if (timer <= timerStateJagung2)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Jagung_2");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Jagung_2");
             }
             else
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Jagung_1");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Jagung_1");
             }
         }
         else if(occupier == "Bawang") //correct spelling?
         {
             if (timer <= timerStateBawang3)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/bawang_3");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Bawang_3");
             }
             else if (timer <= timerStateBawang2)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/bawang_2");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Bawang_2");
             }
             else
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/bawang_1");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Bawang_1");
             }
         }
         else if(occupier == "Edamame")
         {
             if (timer <= timerStateEdamame3)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Edamame_3");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Edamame_3");
             }
             else if (timer <= timerStateEdamame2)
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Edamame_2");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Edamame_2");
             }
             else
             {
-                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/Edamame_1");
+                PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Tanaman_Edamame_1");
             }
 
         }
@@ -260,7 +260,7 @@ public class PlantFunction_Kebun : MonoBehaviour
         }
 
         PlayerPrefs.DeleteKey("PlantingSpot"+Pot);
-        PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/placeholder");
+        PlantspotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested " + occupier);
     }
 

@@ -136,7 +136,6 @@ public class PlantFunction : MonoBehaviour
         }
 
     }
-
     public void Buy()
     {
         int gold = PlayerPrefs.GetInt("Gold");
@@ -171,45 +170,45 @@ public class PlantFunction : MonoBehaviour
         {
             if (timer <= timerStateKangkung3)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Kangkung_3");
             }
             else if (timer <= timerStateKangkung2)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Kangkung_2");
             }
             else
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Kangkung_1");
             }
         }
         else if(occupier == "Pokchoi") //correct spelling?
         {
             if (timer <= timerStatePokChoi3)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Pokchoi_3");
             }
             else if (timer <= timerStatePokChoi2)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Pokchoi_2");
             }
             else
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Sawi_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Pokchoi_1");
             }
         }
         else if(occupier == "Selada")
         {
             if (timer <= timerStateSelada3)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_3");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Selada_3");
             }
             else if (timer <= timerStateSelada2)
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_2");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Selada_2");
             }
             else
             {
-                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Selada_1");
+                NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/Sayur_Selada_1");
             }
 
         }
@@ -230,7 +229,7 @@ public class PlantFunction : MonoBehaviour
 
     public void Harvest()
     {
-        int timer = PlayerPrefs.GetInt("Timer"+Pot);
+        int timer = PlayerPrefs.GetInt("Timer" + Pot);
         NetPot.interactable = true;
         if (timer <= 0)
         {
@@ -258,59 +257,11 @@ public class PlantFunction : MonoBehaviour
             Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
         }
 
-        PlayerPrefs.DeleteKey("Pot"+Pot);
-        NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/placeholder");
+        PlayerPrefs.DeleteKey("Pot" + Pot);
+        NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested!");
     }
 
-    //public void Planting()
-    //{
-
-    //    //int state = 0;
-    //    //int timer = timerDefault;
-
-    //    //string plantingSpot = PotArray[Pot];
-
-    //    //if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
-    //    //{
-    //    //    Debug.Log("Already planted here. State: " + state);
-    //    //    Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier + " dengan state: " + state);
-    //    //}
-    //    //else
-    //    //{
-    //    //    int gold = PlayerPrefs.GetInt("Gold");
-
-    //    //    if (gold > 50) 
-    //    //    {
-    //    //        PlayerPrefs.SetString(plantingSpot, occupier); //pot-sekian udah ada kangkungnya
-    //    //        state++;
-    //    //        PlayerPrefs.SetInt(StateArray[Pot], state); //state = 1 state gamau increment?
-    //    //        PlayerPrefs.SetInt(TimerArray[Pot], timerDefault);
-
-    //    //        PlayerPrefs.Save();
-    //    //        Debug.Log("Started planting with state: " + state + " Timer: " + timer);
-
-    //    //        if (state == 1)
-    //    //        {
-    //    //            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Kangkung_1");
-    //    //            InvokeRepeating("PlantProgress", 0f, 1f);
-    //    //        }
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
-    //    //        // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
-    //    //        // tmp_text.enabled = true;
-    //    //        // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
-    //    //        // tmp_text.enabled = false;
-    //    //    }
-    //    //}
-    //}
-
-
 }
 
-//int lastGold = PlayerPrefs.GetInt("Gold");
-//PlayerPrefs.SetInt("Gold", lastGold+20); //<- dapet gold saat menjual, pindah ke Rumah nanti
-//PlayerPrefs.Save(); call this on scene exit
 
