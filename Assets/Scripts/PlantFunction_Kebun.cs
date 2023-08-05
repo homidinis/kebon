@@ -47,8 +47,6 @@ public class PlantFunction_Kebun : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.DeleteAll();
-        PlayerPrefs.SetInt("Gold",5000);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         PlantspotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;

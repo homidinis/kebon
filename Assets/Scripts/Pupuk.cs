@@ -34,7 +34,7 @@ public class Pupuk : MonoBehaviour
     void Start()
     {
 
-        PlayerPrefs.SetInt("Gold",5000);
+        //PlayerPrefs.SetInt("Gold",5000);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         PupukSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
