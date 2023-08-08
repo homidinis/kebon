@@ -6,11 +6,12 @@ public class PupukFunction : MonoBehaviour
 {
     // Start is called before the first frame 
 
+    void Start()
+    {
+        
     int pupukState = PlayerPrefs.GetInt("PupukState");
     int pupukTime = PlayerPrefs.GetInt("PupukTime");
     int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
-    void Start()
-    {
        if(pupukState == 1)
         {
             InvokeRepeating("pupukTimer",0f,1f);
@@ -20,11 +21,15 @@ public class PupukFunction : MonoBehaviour
 
     void pupukTimer()
     {
+
+        int pupukState = PlayerPrefs.GetInt("PupukState");
+        int pupukTime = PlayerPrefs.GetInt("PupukTime");
+        int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
         pupukTime--;
         if (pupukTime <= 0)
         {
             CancelInvoke("pupukTimer");
-            GlobalVariable.pupukBuff = 0;
+            GlobalVariable.pupukBuff = 100;
             PlayerPrefs.SetInt("PupukState", 0);
             PlayerPrefs.Save();
         }

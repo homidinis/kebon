@@ -25,6 +25,28 @@ public class InventoryHandler : MonoBehaviour
     public TextMeshProUGUI PepayaText;
     public TextMeshProUGUI RambutanText;
     public TextMeshProUGUI PisangText;
+    public TextMeshProUGUI PokchoiSiramJamurText;
+    public TextMeshProUGUI PokchoiSausTiramText;
+    public TextMeshProUGUI TumisPokchoiTahuText;
+    public TextMeshProUGUI TumisSeladaJamurText;
+    public TextMeshProUGUI TelurDadarSeladaText;
+    public TextMeshProUGUI KangkungTempeText;
+    public TextMeshProUGUI CahKangkungText;
+    public TextMeshProUGUI JagungBakarText;
+    public TextMeshProUGUI TumisJagungBakarText;
+    public TextMeshProUGUI JagungJamurAsamManisText;
+    public TextMeshProUGUI SupJagungText;
+    public TextMeshProUGUI CincinBawangText;
+    public TextMeshProUGUI TumisEdamameText;
+    public TextMeshProUGUI EdamameGorengText;
+    public TextMeshProUGUI NasiGorengEdamameText;
+    public TextMeshProUGUI NasiGorengJagungText;
+    public TextMeshProUGUI TelurRebusText;
+    public TextMeshProUGUI TelurCeplokText;
+    public TextMeshProUGUI TelurDadarText;
+    public TextMeshProUGUI NasiGorengLengkapText;
+    public TextMeshProUGUI PupukAText;
+
     private int gold; // The current score value
 
     void Start()
@@ -59,8 +81,28 @@ public class InventoryHandler : MonoBehaviour
         TempeText.text = "" + PlayerPrefs.GetInt("Tempe");
         CabaiText.text = "" + PlayerPrefs.GetInt("Cabai");
         MargarinText.text = "" + PlayerPrefs.GetInt("Margarin");
-        TepungText.text = "" + PlayerPrefs.GetInt("Tepung");
-        MinyakText.text = "" + PlayerPrefs.GetInt("Minyak");
+  PokchoiSiramJamurText.text = "" + PlayerPrefs.GetInt("Pokchoi Siram Jamur");
+    PokchoiSausTiramText.text = "" + PlayerPrefs.GetInt("Pokchoi Saus Tiram");
+    TumisPokchoiTahuText.text = "" + PlayerPrefs.GetInt("Tumis Pokchoi Tahu");
+    TumisSeladaJamurText.text = "" + PlayerPrefs.GetInt("Tumis Selada Jamur");
+    TelurDadarSeladaText.text = "" + PlayerPrefs.GetInt("Telur Dadar Selada");
+    KangkungTempeText.text = "" + PlayerPrefs.GetInt("Kangkung Tempe");
+    CahKangkungText.text = "" + PlayerPrefs.GetInt("Cah Kangkung");
+    JagungBakarText.text = "" + PlayerPrefs.GetInt("Jagung Bakar");
+    TumisJagungBakarText.text = "" + PlayerPrefs.GetInt("Tumis Jagung Bakar");
+    JagungJamurAsamManisText.text = "" + PlayerPrefs.GetInt("Jagung Jamur Asam Manis");
+    SupJagungText.text = "" + PlayerPrefs.GetInt("Sup Jagung");
+    CincinBawangText.text = "" + PlayerPrefs.GetInt("Cincin Bawang");
+    TumisEdamameText.text = "" + PlayerPrefs.GetInt("Tumis Edamame");
+    EdamameGorengText.text = "" + PlayerPrefs.GetInt("Edamame Goreng");
+    NasiGorengEdamameText.text = "" + PlayerPrefs.GetInt("NasiGoreng Edamame");
+    NasiGorengJagungText.text = "" + PlayerPrefs.GetInt("NasiGoreng Jagung");
+    TelurRebusText.text = "" + PlayerPrefs.GetInt("Telur Rebus");
+    TelurCeplokText.text = "" + PlayerPrefs.GetInt("Telur Ceplok");
+    TelurDadarText.text = "" + PlayerPrefs.GetInt("Telur Dadar");
+    NasiGorengLengkapText.text = "" + PlayerPrefs.GetInt("Nasi Goreng Lengkap");
+        PupukAText.text = "" + PlayerPrefs.GetInt("PupukA");
+
 
     }
 }
