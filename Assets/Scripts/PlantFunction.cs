@@ -42,7 +42,7 @@ public class PlantFunction : MonoBehaviour
     bool netPotChoicesBool = false;
     GameObject NetPotSprite;
     GameObject timerText;
-
+    GameObject timerBG;
     string occupier;
     Button NetPot;
 
@@ -55,6 +55,7 @@ public class PlantFunction : MonoBehaviour
         NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                   
         timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
 
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Pot" + Pot);
@@ -169,13 +170,13 @@ public class PlantFunction : MonoBehaviour
         occupier = PlayerPrefs.GetString("Pot"+Pot);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         NetPotSprite.GetComponent<Image>().enabled = true;
-
+        timerBG.SetActive(true);
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
-        /*There’s a couple of possibilities you have with the formats here: 
+        /*Thereï¿½s a couple of possibilities you have with the formats here: 
          * {0:#.00} would give you something like 3.00 or 10.12 or 123.45. 
-         * For stuff like scores, you might want something like {0:00000} which would give you 00001 or 02523 or 20000 (or 2000000 if that’s your score :wink: ). 
+         * For stuff like scores, you might want something like {0:00000} which would give you 00001 or 02523 or 20000 (or 2000000 if thatï¿½s your score :wink: ). 
          * Basically, the formatting part allows any kind of formatting (so you can also use this to format date times and other complex types). 
          * Basically, this means {indexOfParameter:formatting}.*/
         timerText.GetComponent<TextMeshProUGUI>().text = niceTime;
@@ -274,6 +275,7 @@ public class PlantFunction : MonoBehaviour
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested!");
         Alert.ShowAlert("Harvested " + occupier + " x1");
+        timerBG.SetActive(false);
 
     }
 
