@@ -147,8 +147,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab30a83b9755dc74fb305aec3b1613c0, type: 2}
+  m_sharedMaterial: {fileID: -4209574248710644483, guid: ab30a83b9755dc74fb305aec3b1613c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -325,8 +326,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.8010712, y: 0.58406067}
-  m_SizeDelta: {x: 106.64, y: 27.71}
+  m_AnchoredPosition: {x: 3.8011, y: 0.79687}
+  m_SizeDelta: {x: 106.64, y: 18.29593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8502606825752083365
 CanvasRenderer:
@@ -358,8 +359,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sawi
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab30a83b9755dc74fb305aec3b1613c0, type: 2}
+  m_sharedMaterial: {fileID: -4209574248710644483, guid: ab30a83b9755dc74fb305aec3b1613c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

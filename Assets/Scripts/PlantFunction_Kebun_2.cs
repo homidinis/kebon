@@ -50,7 +50,8 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     GameObject Plantspot2Choices;
     bool Plantspot2ChoicesBool = false;
     GameObject Plantspot2Sprite;
-
+    GameObject timerText;
+    GameObject timerBG;
     string occupier;
     Button Plantspot2;
 
@@ -60,7 +61,9 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         Plantspot2Sprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         Plantspot2Choices = transform.parent.gameObject.transform.GetChild(5).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                        
+        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
         Plantspot2 = this.transform.parent.GetComponent<Button>();
         Debug.Log("PlantingSpotArray " + "PlantingSpot2" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Kebun2" + Pot));
@@ -187,7 +190,11 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         Debug.Log("Occupier " + occupier);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         Plantspot2Sprite.GetComponent<Image>().enabled = true;
-
+        timerBG.SetActive(true);
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
+        timerText.GetComponent<TextMeshProUGUI>().text = niceTime;
         if (occupier == "Jambu")
         {
             if (timer <= timerStateJambu3)
@@ -323,6 +330,8 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         PlayerPrefs.DeleteKey("PlantingSpot2"+Pot);
         Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested " + occupier);
+        timerBG.SetActive(false);
+        Alert.ShowAlert("Harvested " + occupier + " x1");
     }
 
     //public void Planting()

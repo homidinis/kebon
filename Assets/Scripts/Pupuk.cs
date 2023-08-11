@@ -26,7 +26,8 @@ public class Pupuk : MonoBehaviour
     GameObject PupukChoices;
     bool PupukChoicesBool = false;
     GameObject PupukSprite;
-
+    GameObject timerText;
+    GameObject timerBG;
     string occupier;
     Button PupukButton;
 
@@ -40,6 +41,8 @@ public class Pupuk : MonoBehaviour
         PupukSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         PupukChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
         PupukButton = this.transform.parent.GetComponent<Button>();
         Debug.Log("PupukArray " + "Pupuk" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Pupuk" + Pot));
@@ -101,20 +104,24 @@ public class Pupuk : MonoBehaviour
         Debug.Log("Occupier " + occupier);
         Debug.Log("Pupuk Progress Called. State " + state + " Timer " + timer);
         PupukSprite.GetComponent<Image>().enabled = true;
-
+        timerBG.SetActive(true);
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
+        timerText.GetComponent<TextMeshProUGUI>().text = niceTime;
         if (occupier == "PupukA")
         {
             if (timer <= timerStatePupuk3)
             {
-                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/img_Botol_POC_6");
+                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pupuk/pupuk/pupuk_3");
             }
             else if (timer <= timerStatePupuk2)
             {
-                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/img_Botol_POC_04");
+                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pupuk/pupuk/pupuk_2");
             }
             else
             {
-                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("POC/gambar_/img_Botol_POC_01");
+                PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("ubahh-/pupuk/pupuk/pupuk_1");
             }
         }
 

@@ -367,7 +367,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 273592233}
   m_Direction: 2
   m_Value: 1.0000036
-  m_Size: 0.48818675
+  m_Size: 0.4881868
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -470,8 +470,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab30a83b9755dc74fb305aec3b1613c0, type: 2}
+  m_sharedMaterial: {fileID: -4209574248710644483, guid: ab30a83b9755dc74fb305aec3b1613c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -706,8 +707,9 @@ MonoBehaviour:
     Kristoforus
     Thoerick'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ab30a83b9755dc74fb305aec3b1613c0, type: 2}
+  m_sharedMaterial: {fileID: -4209574248710644483, guid: ab30a83b9755dc74fb305aec3b1613c0,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

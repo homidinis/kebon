@@ -30,7 +30,8 @@ public class SawahPlantFunction : MonoBehaviour
     GameObject NetPotChoices;
     bool netPotChoicesBool = false;
     GameObject NetPotSprite;
-
+    GameObject timerText;
+    GameObject timerBG;
     string occupier;
     Button NetPot;
 
@@ -42,6 +43,8 @@ public class SawahPlantFunction : MonoBehaviour
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Spot" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -141,7 +144,11 @@ public class SawahPlantFunction : MonoBehaviour
         occupier = PlayerPrefs.GetString("Spot" + Pot);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         NetPotSprite.GetComponent<Image>().enabled = true;
-
+        timerBG.SetActive(true);
+        int minutes = Mathf.FloorToInt(timer / 60F);
+        int seconds = Mathf.FloorToInt(timer - minutes * 60);
+        string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
+        timerText.GetComponent<TextMeshProUGUI>().text = niceTime;
         if (occupier == "Padi")
         {
             if (timer <= timerStatePadi3)
@@ -196,6 +203,8 @@ public class SawahPlantFunction : MonoBehaviour
         PlayerPrefs.DeleteKey("Spot" + Pot);
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested! " + occupier);
+        timerBG.SetActive(false);
+        Alert.ShowAlert("Harvested " + occupier + " x1");
     }
 }
 
