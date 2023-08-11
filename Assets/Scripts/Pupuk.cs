@@ -28,6 +28,7 @@ public class Pupuk : MonoBehaviour
     GameObject PupukSprite;
     GameObject timerText;
     GameObject timerBG;
+    GameObject gloves;
     string occupier;
     Button PupukButton;
 
@@ -43,6 +44,7 @@ public class Pupuk : MonoBehaviour
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
         timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
         timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         PupukButton = this.transform.parent.GetComponent<Button>();
         Debug.Log("PupukArray " + "Pupuk" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Pupuk" + Pot));
@@ -132,7 +134,10 @@ public class Pupuk : MonoBehaviour
 
         if (timer <= 0)
         {
+            int zero = 0;
+            timerText.GetComponent<TextMeshProUGUI>().text = zero.ToString();
             harvestButton.SetActive(true);
+            gloves.SetActive(true);
             CancelInvoke("Planting");
         }
 
@@ -163,6 +168,10 @@ public class Pupuk : MonoBehaviour
         PlayerPrefs.DeleteKey("Pupuk");
         PupukSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("POC/gambar_/img_Botol_POC_00");
         Debug.Log("Harvested " + occupier);
+        Alert.ShowAlert("Harvested " + occupier + " x1");
+        timerText.SetActive(false);
+        timerBG.SetActive(false);
+        gloves.SetActive(false);
     }
 }
 

@@ -32,6 +32,7 @@ public class SawahPlantFunction : MonoBehaviour
     GameObject NetPotSprite;
     GameObject timerText;
     GameObject timerBG;
+    GameObject gloves;
     string occupier;
     Button NetPot;
 
@@ -45,6 +46,7 @@ public class SawahPlantFunction : MonoBehaviour
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
         timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
         timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Spot" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -173,8 +175,11 @@ public class SawahPlantFunction : MonoBehaviour
 
         if (timer <= 0)
         {
+            int zero = 0;
+            timerText.GetComponent<TextMeshProUGUI>().text = zero.ToString();
             harvestButton.SetActive(true);
             CancelInvoke("Planting");
+            gloves.SetActive(true);
         }
 
         Debug.Log("Timer: " + timer + " State: " + state);
@@ -204,6 +209,8 @@ public class SawahPlantFunction : MonoBehaviour
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested! " + occupier);
         timerBG.SetActive(false);
+        timerText.SetActive(false);
+        gloves.SetActive(false);
         Alert.ShowAlert("Harvested " + occupier + " x1");
     }
 }

@@ -43,6 +43,7 @@ public class PlantFunction : MonoBehaviour
     GameObject NetPotSprite;
     GameObject timerText;
     GameObject timerBG;
+    GameObject gloves;
     string occupier;
     Button NetPot;
 
@@ -56,7 +57,7 @@ public class PlantFunction : MonoBehaviour
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                   
         timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
         timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
-
+        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Pot" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -174,6 +175,10 @@ public class PlantFunction : MonoBehaviour
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
+        if (timer == 0){
+            int zero = 0;
+            timerText.GetComponent<TextMeshProUGUI>().text = zero.ToString();
+        }
         /*There�s a couple of possibilities you have with the formats here: 
          * {0:#.00} would give you something like 3.00 or 10.12 or 123.45. 
          * For stuff like scores, you might want something like {0:00000} which would give you 00001 or 02523 or 20000 (or 2000000 if that�s your score :wink: ). 
@@ -234,7 +239,10 @@ public class PlantFunction : MonoBehaviour
 
         if (timer <= 0)
         {
+            int zero = 0;
+            timerText.GetComponent<TextMeshProUGUI>().text = zero.ToString();
             harvestButton.SetActive(true);
+            gloves.SetActive(true);
             CancelInvoke("Planting");
         }
 
@@ -245,6 +253,7 @@ public class PlantFunction : MonoBehaviour
     {
         int timer = PlayerPrefs.GetInt("Timer" + Pot);
         NetPot.interactable = true;
+
         if (timer <= 0)
         {
             Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
@@ -264,6 +273,7 @@ public class PlantFunction : MonoBehaviour
                 PlayerPrefs.SetInt("Selada", lastSelada + 1); //increment inventory
             }
             harvestButton.SetActive(false);
+            
         }
 
         else
@@ -275,7 +285,9 @@ public class PlantFunction : MonoBehaviour
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested!");
         Alert.ShowAlert("Harvested " + occupier + " x1");
+        timerText.SetActive(false);
         timerBG.SetActive(false);
+        gloves.SetActive(false);
 
     }
 

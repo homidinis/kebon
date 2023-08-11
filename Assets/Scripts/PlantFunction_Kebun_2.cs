@@ -52,6 +52,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     GameObject Plantspot2Sprite;
     GameObject timerText;
     GameObject timerBG;
+    GameObject gloves;
     string occupier;
     Button Plantspot2;
 
@@ -64,6 +65,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
         timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
         timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         Plantspot2 = this.transform.parent.GetComponent<Button>();
         Debug.Log("PlantingSpotArray " + "PlantingSpot2" + Pot);
         Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Kebun2" + Pot));
@@ -280,8 +282,11 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
 
         if (timer <= 0)
         {
+            int zero = 0;
+            timerText.GetComponent<TextMeshProUGUI>().text = zero.ToString();
             harvestButton.SetActive(true);
             CancelInvoke("Planting");
+            gloves.SetActive(true);
         }
 
         Debug.Log("Timer_Kebun2: " + timer + " State: " + state);
@@ -330,8 +335,11 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         PlayerPrefs.DeleteKey("PlantingSpot2"+Pot);
         Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
         Debug.Log("Harvested " + occupier);
+        timerText.SetActive(false);
         timerBG.SetActive(false);
+        gloves.SetActive(false);
         Alert.ShowAlert("Harvested " + occupier + " x1");
+
     }
 
     //public void Planting()
