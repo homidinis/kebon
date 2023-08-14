@@ -17,8 +17,8 @@ public class Masak : MonoBehaviour
     // Start is called before the first frame update
     void Start()    
     {
-        //PlayerPrefs.SetInt("Jagung",1);
-        //PlayerPrefs.SetInt("Margarin",1);
+        PlayerPrefs.SetInt("Jagung",1);
+        PlayerPrefs.SetInt("Margarin",1);
         Debug.Log("Get Length 1: " + GlobalVariable.arrayResep.GetLength(1) + " Get Length 0: " + GlobalVariable.arrayResep.GetLength(0));
         Debug.Log(GlobalVariable.arrayResep.GetLength(0));
         for (int i = 0; i < GlobalVariable.arrayResep.GetLength(0); i++)
