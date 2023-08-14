@@ -55,8 +55,8 @@ public class PlantFunction : MonoBehaviour
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                   
-        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Pot" + Pot);

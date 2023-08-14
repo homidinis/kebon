@@ -63,8 +63,8 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         Plantspot2Sprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         Plantspot2Choices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
-        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         Plantspot2 = this.transform.parent.GetComponent<Button>();
         Debug.Log("PlantingSpotArray " + "PlantingSpot2" + Pot);
