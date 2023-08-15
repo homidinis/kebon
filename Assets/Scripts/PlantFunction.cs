@@ -85,7 +85,7 @@ public class PlantFunction : MonoBehaviour
         occupier = "Kangkung";
         timer = timerDefaultKangkung;
         price = priceDefaultKangkung;
-        //ClickHandler();
+      
         Buy();
     }
     public void PlantPokchoi()
@@ -93,7 +93,7 @@ public class PlantFunction : MonoBehaviour
         occupier = "Pokchoi";
         timer = timerDefaultPokChoi;
         price = priceDefaultPokChoi;
-        //ClickHandler();
+        
         Buy();
     }
     public void PlantSelada()
@@ -101,47 +101,11 @@ public class PlantFunction : MonoBehaviour
         occupier = "Selada"; //set selada here jadi kode dibawah tau kalau occupier sudah jadi selada 
         timer = timerDefaultSelada;
         price = priceDefaultSelada;
-        //ClickHandler();
+      
         Buy();
     }
 
-    public void ClickHandler()
-    {
-        string plantingSpot = "Pot"+Pot;
-        state = PlayerPrefs.GetInt("State"+Pot);
-        timer = PlayerPrefs.GetInt("Timer"+Pot);
-
-
-        if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
-        {
-            Planting();
-            
-            Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
-            string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
-
-        }
-
-        else if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == true)
-        {
-            Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
-        }
-
-        else if (state == 3)
-        {
-            Harvest();
-            Debug.Log("Harvested! State: " + state);
-        }
-
-        else
-        {
-            Debug.Log("bruh. State: " + state);
-            Debug.Log("State: " + state + "Planting at: " + plantingSpot);
-            string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier);
-        }
-
-    }
+  
     public void Buy()
     {
         int gold = PlayerPrefs.GetInt("Gold");
