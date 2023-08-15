@@ -13,12 +13,13 @@ public class Masak : MonoBehaviour
     public GameObject masakButton;
     public TextMeshProUGUI recipeTitle;
     public TextMeshProUGUI recipeDescription;
+    public GameObject Masakan;
     //public GameObject recipeImage;
     // Start is called before the first frame update
     void Start()    
     {
-        //PlayerPrefs.SetInt("Jagung",1);
-        //PlayerPrefs.SetInt("Margarin",1);
+        PlayerPrefs.SetInt("Jagung",1);
+        PlayerPrefs.SetInt("Margarin",1);
         Debug.Log("Get Length 1: " + GlobalVariable.arrayResep.GetLength(1) + " Get Length 0: " + GlobalVariable.arrayResep.GetLength(0));
         Debug.Log(GlobalVariable.arrayResep.GetLength(0));
         for (int i = 0; i < GlobalVariable.arrayResep.GetLength(0); i++)
@@ -85,6 +86,7 @@ public class Masak : MonoBehaviour
                 PlayerPrefs.SetInt(GlobalVariable.arrayIngredient[i][j], bahan); //reduce bahan by 1 and set playerpref of that ingredient
                 anim.Play("animasiMasak");
                 Debug.Log("Animation played");
+                StartCoroutine(waitMakanan(GlobalVariable.arrayResep[i, 1]));
                 // plate = GameObject.Find("plate");
                 //set plate as cooked food
                 //activate plate in animation
@@ -99,6 +101,14 @@ public class Masak : MonoBehaviour
         {
             Debug.Log("Something went wrong: readytocook: " + readyToCook); ;
         }
+    }
+
+    IEnumerator waitMakanan(string makanan)
+    {
+        yield return new WaitForSeconds(2f);
+        Masakan.GetComponent<Image>().sprite = Resources.Load<Sprite>(makanan);
+        Masakan.SetActive(true);
+
     }
     void Buy(int j) //onclick: check gold: if price < gold then increment inventory. add "yakin membeli" button
     {
