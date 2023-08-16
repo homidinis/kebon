@@ -25,6 +25,7 @@ public class PupukFunction : MonoBehaviour
         int pupukState = PlayerPrefs.GetInt("PupukState");
         int pupukTime = PlayerPrefs.GetInt("PupukTime");
         int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
+        
         pupukTime--;
         if (pupukTime <= 0)
         {
@@ -40,11 +41,17 @@ public class PupukFunction : MonoBehaviour
     {
         if(pupukType == 1)
         {
+            int jumlahPupuk = PlayerPrefs.GetInt("PupukA");
+            if (jumlahPupuk > 0){
             PlayerPrefs.SetInt("PupukState", 1);
             PlayerPrefs.SetInt("PupukTime", 3600);
             PlayerPrefs.SetInt("PupukBuff", 75);
             PlayerPrefs.Save();
+            Debug.Log("Pupuk used");
+            int jumlahPupukUsed = jumlahPupuk - 1;
+            PlayerPrefs.SetInt("PupukA",jumlahPupukUsed);
             Start();
+            }
         }
     }
   

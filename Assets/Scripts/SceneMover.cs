@@ -59,6 +59,10 @@ public class SceneMover: MonoBehaviour
     {
         SceneManager.LoadScene("StartScreen");
     }
+public void Achievement()
+    {
+        SceneManager.LoadScene("Achievement");
+    }
 
 
 }

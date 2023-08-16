@@ -1108,7 +1108,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2019510593}
         m_TargetAssemblyTypeName: SceneMover, Assembly-CSharp
-        m_MethodName: RuangTamu
+        m_MethodName: StartScreen
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
