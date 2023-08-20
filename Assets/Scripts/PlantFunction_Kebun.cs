@@ -161,6 +161,7 @@ public class PlantFunction_Kebun : MonoBehaviour
         {
             PlantspotChoicesBool = false;
             Debug.Log("Not Enugh Gold");
+            Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
 
@@ -173,6 +174,7 @@ public class PlantFunction_Kebun : MonoBehaviour
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         PlantspotSprite.GetComponent<Image>().enabled = true;
         timerBG.SetActive(true);
+        timerText.SetActive(true);
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
@@ -276,7 +278,7 @@ public class PlantFunction_Kebun : MonoBehaviour
         Debug.Log("Harvested " + occupier);
         timerBG.SetActive(false);
         timerText.SetActive(false);
-        gloves.SetActive(true);
+        gloves.SetActive(false);
         Alert.ShowAlert("Harvested " + occupier + " x1");
     }
 

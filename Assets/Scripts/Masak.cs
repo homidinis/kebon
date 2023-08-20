@@ -74,6 +74,7 @@ public class Masak : MonoBehaviour
             {
                 readyToCook = false;
                 Debug.Log("Bahan kurang!" + namaBahan + bahan);
+                Alert.ShowAlert("Bahan kurang! " + namaBahan + " " + bahan);
             }
         }
         if(readyToCook)
@@ -95,12 +96,10 @@ public class Masak : MonoBehaviour
                 jumlahMakanan++;
                 PlayerPrefs.SetInt(GlobalVariable.arrayResep[i, 0], jumlahMakanan);
                 Debug.Log(GlobalVariable.arrayResep[i, 0] + ' ' + jumlahMakanan);
-            
             }
-        } else
-        {
-            Debug.Log("Something went wrong: readytocook: " + readyToCook); ;
-        }
+
+            PlayerPrefs.SetInt(GlobalVariable.arrayResep[i, 0], 1);
+        } 
     }
 
     IEnumerator waitMakanan(string makanan)
@@ -108,7 +107,7 @@ public class Masak : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Masakan.GetComponent<Image>().sprite = Resources.Load<Sprite>(makanan);
         Masakan.SetActive(true);
-
+        Alert.ShowAlert("Berhasil terbuat " + makanan + " x1");
     }
     void Buy(int j) //onclick: check gold: if price < gold then increment inventory. add "yakin membeli" button
     {

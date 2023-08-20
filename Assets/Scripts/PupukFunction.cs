@@ -9,10 +9,10 @@ public class PupukFunction : MonoBehaviour
     void Start()
     {
         
-    int pupukState = PlayerPrefs.GetInt("PupukState");
-    int pupukTime = PlayerPrefs.GetInt("PupukTime");
-    int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
-       if(pupukState == 1)
+        int pupukState = PlayerPrefs.GetInt("PupukState");
+        int pupukTime = PlayerPrefs.GetInt("PupukTime");
+        int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
+        if(pupukState == 1)
         {
             InvokeRepeating("pupukTimer",0f,1f);
             GlobalVariable.pupukBuff = pupukBuff;
@@ -25,11 +25,12 @@ public class PupukFunction : MonoBehaviour
         int pupukState = PlayerPrefs.GetInt("PupukState");
         int pupukTime = PlayerPrefs.GetInt("PupukTime");
         int pupukBuff = PlayerPrefs.GetInt("PupukBuff");
+        
         pupukTime--;
         if (pupukTime <= 0)
         {
             CancelInvoke("pupukTimer");
-            GlobalVariable.pupukBuff = 100;
+            GlobalVariable.pupukBuff = 0;
             PlayerPrefs.SetInt("PupukState", 0);
             PlayerPrefs.Save();
         }
@@ -40,17 +41,20 @@ public class PupukFunction : MonoBehaviour
     {
         if(pupukType == 1)
         {
-            PlayerPrefs.SetInt("PupukState", 1);
-            PlayerPrefs.SetInt("PupukTime", 3600);
-            PlayerPrefs.SetInt("PupukBuff", 75);
-            PlayerPrefs.Save();
-            Start();
+            int jumlahPupuk = PlayerPrefs.GetInt("PupukA");
+            if (jumlahPupuk > 0)
+            {
+                GlobalVariable.pupukBuff = 50;
+                PlayerPrefs.SetInt("PupukState", 1);
+                PlayerPrefs.SetInt("PupukTime", 3600);
+                PlayerPrefs.SetInt("PupukBuff", 50);
+                PlayerPrefs.Save();
+                Debug.Log("Pupuk used");
+                int jumlahPupukUsed = jumlahPupuk - 1;
+                PlayerPrefs.SetInt("PupukA",jumlahPupukUsed);
+                Start();
+            }
         }
     }
   
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

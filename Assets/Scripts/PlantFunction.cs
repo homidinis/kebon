@@ -46,10 +46,11 @@ public class PlantFunction : MonoBehaviour
     GameObject gloves;
     string occupier;
     Button NetPot;
-
+    
     // Start is called before the first frame update
     void Start()
     {
+ 
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
@@ -124,6 +125,7 @@ public class PlantFunction : MonoBehaviour
         {
             netPotChoicesBool = false;
             Debug.Log("Not Enugh Gold");
+            Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
 

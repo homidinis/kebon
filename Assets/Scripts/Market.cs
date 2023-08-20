@@ -56,10 +56,12 @@ public class Market : MonoBehaviour
             PlayerPrefs.SetInt(name, totalItem);
             PlayerPrefs.Save();
             Debug.Log("Bought " + name + " Total item: " + totalItem);
+            Alert.ShowAlert("Terbeli " + name + " x1");
         }
         else
         {
             Debug.Log("Gold Tidak Cukup");
+            Alert.ShowAlert("Maaf gold tidak cukup");
         }
     }
 }

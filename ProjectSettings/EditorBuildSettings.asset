@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: a5f8e048bf181b8418c845950a5f271b
+  - enabled: 1
     path: Assets/Scenes/Home.unity
     guid: c6a46d01eab49e64b95f8f1cb28fd04d
   - enabled: 1
@@ -27,8 +30,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Kebun_Tanah_2.unity
     guid: b93397206ddb95a478137254afd07e57
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
-    guid: a5f8e048bf181b8418c845950a5f271b
+    path: Assets/Scenes/Achievement.unity
+    guid: 2cae36c0ed745964da1d38ebd956cd9b
   - enabled: 1
     path: Assets/Scenes/Greenhouse.unity
     guid: fb3e63a5b789c2f45a9dd2dea576303e
