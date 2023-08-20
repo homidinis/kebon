@@ -39,13 +39,14 @@ public class SawahPlantFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Pupuk buff" + GlobalVariable.pupukBuff);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
         NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
         harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
-        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         Debug.Log("PotArray " + "Spot" + Pot);
@@ -135,6 +136,7 @@ public class SawahPlantFunction : MonoBehaviour
         {
             netPotChoicesBool = false;
             Debug.Log("Not Enugh Gold");
+            Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
 
@@ -146,7 +148,8 @@ public class SawahPlantFunction : MonoBehaviour
         occupier = PlayerPrefs.GetString("Spot" + Pot);
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         NetPotSprite.GetComponent<Image>().enabled = true;
-        timerBG.SetActive(true);
+        timerBG.SetActive(true); 
+        timerText.SetActive(true);
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);

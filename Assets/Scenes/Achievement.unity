@@ -234,7 +234,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0.00052523747}
-  m_SizeDelta: {x: 0, y: 874.69}
+  m_SizeDelta: {x: 0, y: 544.46}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &301736109
 GameObject:
@@ -319,8 +319,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2098909559}
   m_HandleRect: {fileID: 2098909558}
   m_Direction: 2
-  m_Value: 0.9999991
-  m_Size: 0.2943214
+  m_Value: 0.9999981
+  m_Size: 0.4728354
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -437,8 +437,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: -0.000019073}
-  m_SizeDelta: {x: 644, y: 362}
+  m_AnchoredPosition: {x: 0.0000019073, y: -0.00000095367}
+  m_SizeDelta: {x: 749, y: 421.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &574916032
 MonoBehaviour:
@@ -620,8 +620,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -170.35007}
-  m_SizeDelta: {x: 0, y: 340.7}
+  m_AnchoredPosition: {x: 0, y: 0.0025634766}
+  m_SizeDelta: {x: 0, y: 0.0048828}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &994685235
 MonoBehaviour:
@@ -710,7 +710,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f344d712f97aeab4ab380d5542862b39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PokchoiSiramJamur: {fileID: 401511753416605505}
+  Menu:
+  - {fileID: 401511753416605505}
+  - {fileID: 401511751940003904}
+  - {fileID: 401511752837290768}
+  - {fileID: 401511753392228535}
+  - {fileID: 401511752876406733}
+  - {fileID: 401511752643196493}
+  - {fileID: 401511752788439636}
+  - {fileID: 401511752345623838}
+  - {fileID: 401511751864480092}
+  - {fileID: 401511752798202941}
+  - {fileID: 401511752433562078}
+  - {fileID: 401511752558860305}
+  - {fileID: 401511753476808584}
+  - {fileID: 401511751373629048}
+  - {fileID: 401511751761643816}
+  - {fileID: 401511752651019539}
+  - {fileID: 401511752823669409}
+  - {fileID: 401511751816279107}
+  - {fileID: 401511753466428625}
+  - {fileID: 401511752815053756}
+  namaMenu:
+  - Pokchoi Siram Jamur
+  - Pokchoi Saus Tiram
+  - Tumis Pokchoi Tahu
+  - Tumis Selada Jamur
+  - Telur Dadar Selada
+  - Kangkung Tempe
+  - Cah Kangkung
+  - Jagung Bakar
+  - Tumis Jagung Bakar
+  - Jagung Jamur Asam Manis
+  - Sup Jagung
+  - Cincin Bawang
+  - Tumis Edamame
+  - Edamame Goreng
+  - Nasi Goreng Edamame
+  - Nasi Goreng Jagung
+  - Telur Rebus
+  - Telur Ceplok
+  - Telur Dadar
+  - Nasi Goreng Lengkap
 --- !u!1 &1371858723
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,7 +881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00000095367, y: -15.495}
+  m_AnchoredPosition: {x: -5.7e-14, y: -23}
   m_SizeDelta: {x: 579.36, y: 257.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1719206016
@@ -941,7 +982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1051,15 +1091,15 @@ RectTransform:
   m_GameObject: {fileID: 2019966046}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.99983084, y: 0.99983084, z: 0.99983084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 574916031}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -278.97, y: 140.85}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 44.4, y: -52.1}
   m_SizeDelta: {x: 66.55, y: 55.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019966048

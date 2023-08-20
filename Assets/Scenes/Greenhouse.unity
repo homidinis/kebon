@@ -603,7 +603,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1269,7 +1268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &770616418
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2698,7 +2697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1511099192
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3854,32 +3853,32 @@ PrefabInstance:
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 195.16
+      value: 67.5
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 55.25
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
@@ -3919,12 +3918,12 @@ PrefabInstance:
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -53
+      value: -280.02002
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 126.15
+      value: -51.72
       objectReference: {fileID: 0}
     - target: {fileID: 3569013568395694869, guid: 45d56dff879cb9c41b618ab18ca1f190,
         type: 3}

@@ -193,6 +193,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         Plantspot2Sprite.GetComponent<Image>().enabled = true;
         timerBG.SetActive(true);
+        timerText.SetActive(true);
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
@@ -341,55 +342,5 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         Alert.ShowAlert("Harvested " + occupier + " x1");
 
     }
-
-    //public void Planting()
-    //{
-
-    //    //int state = 0;
-    //    //int timer = timerDefault;
-
-    //    //string plantingSpot = PotArray[Pot];
-
-    //    //if (PlayerPrefs.HasKey(plantingSpot)) //kalau plantingSpot udah ada tanaman, do nothing
-    //    //{
-    //    //    Debug.Log("Already planted here. State: " + state);
-    //    //    Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier + " dengan state: " + state);
-    //    //}
-    //    //else
-    //    //{
-    //    //    int gold = PlayerPrefs.GetInt("Gold");
-
-    //    //    if (gold > 50) 
-    //    //    {
-    //    //        PlayerPrefs.SetString(plantingSpot, occupier); //pot-sekian udah ada Jambunya
-    //    //        state++;
-    //    //        PlayerPrefs.SetInt(StateArray[Pot], state); //state = 1 state gamau increment?
-    //    //        PlayerPrefs.SetInt(TimerArray[Pot], timerDefault);
-
-    //    //        PlayerPrefs.Save();
-    //    //        Debug.Log("Started planting with state: " + state + " Timer: " + timer);
-
-    //    //        if (state == 1)
-    //    //        {
-    //    //            childImage.GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/Jambu_1");
-    //    //            InvokeRepeating("PlantProgress", 0f, 1f);
-    //    //        }
-    //    //    }
-    //    //    else
-    //    //    {
-    //    //        Debug.Log("Not enough money. State: " + state + "Uang sekarang: " + PlayerPrefs.GetInt("Gold"));
-    //    //        // TextMeshPro tmp_text = GetComponent<TextMeshPro>();
-    //    //        // tmp_text.enabled = true;
-    //    //        // tmp_text.CrossFadeAlpha(0.0f, 0.05f, false);
-    //    //        // tmp_text.enabled = false;
-    //    //    }
-    //    //}
-    //}
-
-
 }
-
-//int lastGold = PlayerPrefs.GetInt("Gold");
-//PlayerPrefs.SetInt("Gold", lastGold+20); //<- dapet gold saat menjual, pindah ke Rumah nanti
-//PlayerPrefs.Save(); call this on scene exit
 

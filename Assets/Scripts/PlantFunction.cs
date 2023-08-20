@@ -125,6 +125,7 @@ public class PlantFunction : MonoBehaviour
         {
             netPotChoicesBool = false;
             Debug.Log("Not Enugh Gold");
+            Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
 
