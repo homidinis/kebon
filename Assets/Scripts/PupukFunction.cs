@@ -46,7 +46,7 @@ public class PupukFunction : MonoBehaviour
             {
                 GlobalVariable.pupukBuff = 50;
                 PlayerPrefs.SetInt("PupukState", 1);
-                PlayerPrefs.SetInt("PupukTime", 3600);
+                PlayerPrefs.SetInt("PupukTime", 60);
                 PlayerPrefs.SetInt("PupukBuff", 50);
                 PlayerPrefs.Save();
                 Debug.Log("Pupuk used");

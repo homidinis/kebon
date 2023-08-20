@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;  
 using UnityEngine.SceneManagement;  
 
-
-
 public class SceneMover: MonoBehaviour
 {  
+
+    public void Mine()
+    {
+        SceneManager.LoadScene("Mine");
+    }
     public void Home() {  
         SceneManager.LoadScene("Home");  
     }  

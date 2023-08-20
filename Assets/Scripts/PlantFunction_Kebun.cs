@@ -17,16 +17,16 @@ public class PlantFunction_Kebun : MonoBehaviour
     int priceDefaultBawang = 100;
     int priceDefaultEdamame = 150;
 
-    int timerDefaultJagung = 10 * (GlobalVariable.pupukBuff / 100);
-        int timerStateJagung2 = 5 * (GlobalVariable.pupukBuff / 100);
+    int timerDefaultJagung = 100 * (GlobalVariable.pupukBuff / 100);
+        int timerStateJagung2 = 50 * (GlobalVariable.pupukBuff / 100);
         int timerStateJagung3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultBawang = 10 * (GlobalVariable.pupukBuff / 100);
-        int timerStateBawang2 = 5 * (GlobalVariable.pupukBuff / 100);
+    int timerDefaultBawang = 100 * (GlobalVariable.pupukBuff / 100);
+        int timerStateBawang2 = 50 * (GlobalVariable.pupukBuff / 100);
         int timerStateBawang3 = 1 * (GlobalVariable.pupukBuff / 100);
 
-    int timerDefaultEdamame = 10 * (GlobalVariable.pupukBuff / 100);
-        int timerStateEdamame2 = 5 * (GlobalVariable.pupukBuff / 100);
+    int timerDefaultEdamame = 100 * (GlobalVariable.pupukBuff / 100);
+        int timerStateEdamame2 = 50 * (GlobalVariable.pupukBuff / 100);
         int timerStateEdamame3 = 1 * (GlobalVariable.pupukBuff / 100);
 
     int timerDefault;
@@ -58,8 +58,8 @@ public class PlantFunction_Kebun : MonoBehaviour
         timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         Plantspot = this.transform.parent.GetComponent<Button>();
-        Debug.Log("PlantingSpotArray " + "PlantingSpot" + Pot);
-        Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Kebun" + Pot));
+        //Debug.Log("PlantingSpotArray " + "PlantingSpot" + Pot);
+        //Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Kebun" + Pot));
         if (PlayerPrefs.HasKey("PlantingSpot"+Pot))
         {
             InvokeRepeating("Planting", 0f, 1f);

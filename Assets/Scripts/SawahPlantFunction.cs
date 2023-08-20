@@ -15,8 +15,8 @@ public class SawahPlantFunction : MonoBehaviour
 
     int priceDefaultPadi = 50;
 
-    int timerDefaultPadi = 10 * (GlobalVariable.pupukBuff / 100);
-    int timerStatePadi2 = 5 * (GlobalVariable.pupukBuff / 100);
+    int timerDefaultPadi = 100 * (GlobalVariable.pupukBuff / 100);
+    int timerStatePadi2 = 50 * (GlobalVariable.pupukBuff / 100);
     int timerStatePadi3 = 1 * (GlobalVariable.pupukBuff / 100);
 
     int timerDefault;
@@ -39,7 +39,7 @@ public class SawahPlantFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Pupuk buff" + GlobalVariable.pupukBuff);
+        //Debug.Log("Pupuk buff" + GlobalVariable.pupukBuff);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
@@ -49,8 +49,8 @@ public class SawahPlantFunction : MonoBehaviour
         timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
-        Debug.Log("PotArray " + "Spot" + Pot);
-        Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
+        //Debug.Log("PotArray " + "Spot" + Pot);
+        //Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
         if (PlayerPrefs.HasKey("Spot" + Pot))
         {
             InvokeRepeating("Planting", 0f, 1f);

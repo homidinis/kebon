@@ -10,7 +10,7 @@ public class PlantFunction : MonoBehaviour
     public int Pot;
 
     int state = 0;
-    int timer = 0;
+    float timer = 0;
 
     int price;
 
@@ -18,17 +18,17 @@ public class PlantFunction : MonoBehaviour
     int priceDefaultPokChoi = 100;
     int priceDefaultSelada = 150;
 
-    int timerDefaultKangkung = 300 * (GlobalVariable.pupukBuff / 100);
-        int timerStateKangkung2 = 150 * (GlobalVariable.pupukBuff / 100);
-        int timerStateKangkung3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultKangkung = 100 * GlobalVariable.pupukBuff / 100;
+    float timerStateKangkung2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerStateKangkung3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultPokChoi = 400 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePokChoi2 = 150 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePokChoi3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultPokChoi = 100 * GlobalVariable.pupukBuff / 100;
+    float timerStatePokChoi2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerStatePokChoi3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultSelada = 500 * (GlobalVariable.pupukBuff / 100);
-        int timerStateSelada2 = 150 * (GlobalVariable.pupukBuff / 100);
-        int timerStateSelada3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultSelada = 100 * GlobalVariable.pupukBuff / 100;
+    float timerStateSelada2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerStateSelada3 = 1 * GlobalVariable.pupukBuff / 100;
 
     int timerDefault;
 
@@ -50,7 +50,10 @@ public class PlantFunction : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
- 
+        //timerDefaultKangkung = timerDefaultKangkung * GlobalVariable.pupukBuff / 100;
+        //timerStateKangkung2 = timerStateKangkung2 * GlobalVariable.pupukBuff / 100;
+        //timerStateKangkung3 = timerStateKangkung3 * GlobalVariable.pupukBuff / 100;
+        Debug.Log("Default Kangkung" + timerDefaultKangkung + " Buff " + GlobalVariable.pupukBuff);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
@@ -60,8 +63,8 @@ public class PlantFunction : MonoBehaviour
         timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
         gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
-        Debug.Log("PotArray " + "Pot" + Pot);
-        Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
+        //Debug.Log("PotArray " + "Pot" + Pot);
+        //Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
         if (PlayerPrefs.HasKey("Pot"+Pot))
         {
             InvokeRepeating("Planting", 0f, 1f);
@@ -113,7 +116,7 @@ public class PlantFunction : MonoBehaviour
         if (gold >= price)
         {
             PlayerPrefs.SetString("Pot"+Pot, occupier);
-            PlayerPrefs.SetInt("Timer"+Pot, timer);
+            PlayerPrefs.SetFloat("Timer"+Pot, timer);
             PlayerPrefs.SetInt("State"+Pot, 1);
             PlayerPrefs.SetInt("Gold", gold - price);
             PlayerPrefs.Save();
@@ -200,7 +203,7 @@ public class PlantFunction : MonoBehaviour
 
         timer--;
         PlayerPrefs.SetInt("State"+Pot, state);
-        PlayerPrefs.SetInt("Timer"+Pot, timer);
+        PlayerPrefs.SetFloat("Timer"+Pot, timer);
         PlayerPrefs.Save();
 
         if (timer <= 0)
