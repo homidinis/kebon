@@ -14,20 +14,20 @@ public class PlantFunction : MonoBehaviour
 
     int price;
 
-    int priceDefaultKangkung = 50;
+    int priceDefaultKangkung = 100;
     int priceDefaultPokChoi = 100;
-    int priceDefaultSelada = 150;
+    int priceDefaultSelada = 100;
 
-    float timerDefaultKangkung = 100 * GlobalVariable.pupukBuff / 100;
-    float timerStateKangkung2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerDefaultKangkung = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStateKangkung2 = 100 * GlobalVariable.pupukBuff / 100;
     float timerStateKangkung3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    float timerDefaultPokChoi = 100 * GlobalVariable.pupukBuff / 100;
-    float timerStatePokChoi2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerDefaultPokChoi = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStatePokChoi2 = 100 * GlobalVariable.pupukBuff / 100;
     float timerStatePokChoi3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    float timerDefaultSelada = 100 * GlobalVariable.pupukBuff / 100;
-    float timerStateSelada2 = 50 * GlobalVariable.pupukBuff / 100;
+    float timerDefaultSelada = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStateSelada2 = 100 * GlobalVariable.pupukBuff / 100;
     float timerStateSelada3 = 1 * GlobalVariable.pupukBuff / 100;
 
     int timerDefault;
@@ -53,15 +53,14 @@ public class PlantFunction : MonoBehaviour
         //timerDefaultKangkung = timerDefaultKangkung * GlobalVariable.pupukBuff / 100;
         //timerStateKangkung2 = timerStateKangkung2 * GlobalVariable.pupukBuff / 100;
         //timerStateKangkung3 = timerStateKangkung3 * GlobalVariable.pupukBuff / 100;
-        Debug.Log("Default Kangkung" + timerDefaultKangkung + " Buff " + GlobalVariable.pupukBuff);
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
-        NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;                   
-        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
+        NetPotChoices = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        harvestButton = transform.parent.gameObject.transform.GetChild(8).gameObject;                   
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(5).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(7).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         //Debug.Log("PotArray " + "Pot" + Pot);
         //Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -89,7 +88,6 @@ public class PlantFunction : MonoBehaviour
         occupier = "Kangkung";
         timer = timerDefaultKangkung;
         price = priceDefaultKangkung;
-      
         Buy();
     }
     public void PlantPokchoi()
@@ -97,7 +95,6 @@ public class PlantFunction : MonoBehaviour
         occupier = "Pokchoi";
         timer = timerDefaultPokChoi;
         price = priceDefaultPokChoi;
-        
         Buy();
     }
     public void PlantSelada()
@@ -105,7 +102,6 @@ public class PlantFunction : MonoBehaviour
         occupier = "Selada"; //set selada here jadi kode dibawah tau kalau occupier sudah jadi selada 
         timer = timerDefaultSelada;
         price = priceDefaultSelada;
-      
         Buy();
     }
 
@@ -127,7 +123,7 @@ public class PlantFunction : MonoBehaviour
         else
         {
             netPotChoicesBool = false;
-            Debug.Log("Not Enugh Gold");
+            //Debug.Log("Not Enugh Gold");
             Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
@@ -136,11 +132,13 @@ public class PlantFunction : MonoBehaviour
     public void Planting()
     {
         state = PlayerPrefs.GetInt("State"+Pot);
-        timer = PlayerPrefs.GetInt("Timer"+Pot);
+        timer = PlayerPrefs.GetFloat("Timer"+Pot);
         occupier = PlayerPrefs.GetString("Pot"+Pot);
-        Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
+        //Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         NetPotSprite.GetComponent<Image>().enabled = true;
         timerBG.SetActive(true);
+        timerText.SetActive(true);
+        NetPot.interactable = false;
         int minutes = Mathf.FloorToInt(timer / 60F);
         int seconds = Mathf.FloorToInt(timer - minutes * 60);
         string niceTime = string.Format("{0}:{1:00}", minutes, seconds);
@@ -215,7 +213,7 @@ public class PlantFunction : MonoBehaviour
             CancelInvoke("Planting");
         }
 
-        Debug.Log("Timer: " + timer + " State: " + state);
+        //Debug.Log("Timer: " + timer + " State: " + state);
     }
 
     public void Harvest()
@@ -225,7 +223,7 @@ public class PlantFunction : MonoBehaviour
 
         if (timer <= 0)
         {
-            Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
+            //Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
             if (occupier == "Kangkung")
             {
                 int lastKangkung = PlayerPrefs.GetInt("Kangkung");
@@ -247,16 +245,16 @@ public class PlantFunction : MonoBehaviour
 
         else
         {
-            Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
+            //Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
         }
 
         PlayerPrefs.DeleteKey("Pot" + Pot);
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
-        Debug.Log("Harvested!");
-        Alert.ShowAlert("Harvested " + occupier + " x1");
         timerText.SetActive(false);
         timerBG.SetActive(false);
         gloves.SetActive(false);
+        //Debug.Log("Harvested!");
+        Alert.ShowAlert("Harvested " + occupier + " x1");
 
     }
 

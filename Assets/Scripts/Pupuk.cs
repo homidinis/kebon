@@ -17,7 +17,7 @@ public class Pupuk : MonoBehaviour
 
     int timerDefaultPupukA = 60;
     int timerStatePupuk1 = 60;
-    int timerStatePupuk2 = 15;
+    int timerStatePupuk2 = 30;
     int timerStatePupuk3 = 1;
     int timerDefault;
 

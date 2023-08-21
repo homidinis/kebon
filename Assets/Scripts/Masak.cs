@@ -87,7 +87,7 @@ public class Masak : MonoBehaviour
                 PlayerPrefs.SetInt(GlobalVariable.arrayIngredient[i][j], bahan); //reduce bahan by 1 and set playerpref of that ingredient
                 anim.Play("animasiMasak");
                 Debug.Log("Animation played");
-                StartCoroutine(waitMakanan(GlobalVariable.arrayResep[i, 1]));
+                StartCoroutine(waitMakanan(GlobalVariable.arrayResep[i, 1], i));
                 // plate = GameObject.Find("plate");
                 //set plate as cooked food
                 //activate plate in animation
@@ -102,12 +102,12 @@ public class Masak : MonoBehaviour
         } 
     }
 
-    IEnumerator waitMakanan(string makanan)
+    IEnumerator waitMakanan(string makanan, int i)
     {
         yield return new WaitForSeconds(2f);
         Masakan.GetComponent<Image>().sprite = Resources.Load<Sprite>(makanan);
         Masakan.SetActive(true);
-        Alert.ShowAlert("Berhasil terbuat " + makanan + " x1");
+        Alert.ShowAlert("Berhasil terbuat " + GlobalVariable.arrayResep[i, 0] + " x1");
     }
     void Buy(int j) //onclick: check gold: if price < gold then increment inventory. add "yakin membeli" button
     {

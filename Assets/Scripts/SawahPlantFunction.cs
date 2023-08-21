@@ -9,17 +9,17 @@ public class SawahPlantFunction : MonoBehaviour
     public int Pot;
 
     int state = 0;
-    int timer = 0;
+    float timer = 0;
 
     int price;
 
-    int priceDefaultPadi = 50;
+    int priceDefaultPadi = 300;
 
-    int timerDefaultPadi = 100 * (GlobalVariable.pupukBuff / 100);
-    int timerStatePadi2 = 50 * (GlobalVariable.pupukBuff / 100);
-    int timerStatePadi3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultPadi = 500 * GlobalVariable.pupukBuff / 100;
+    float timerStatePadi2 = 250 * GlobalVariable.pupukBuff / 100;
+    float timerStatePadi3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefault;
+    float timerDefault;
 
     //string[] PotArray = { "Pot1", "Pot2", "Pot3", "Pot4", "Pot5", "Pot6", "Pot7", "Pot8", "Pot9", "Pot10", "Pot11", "Pot12" }; //put pots in an array
     //string[] StateArray = { "StatePot1", "StatePot2", "StatePot3", "StatePot4", "StatePot5", "StatePot6", "StatePot7", "StatePot8", "StatePot9", "StatePot10", "StatePot11","StatePot12" };
@@ -43,11 +43,11 @@ public class SawahPlantFunction : MonoBehaviour
         //childImage = GameObject.Find("kkk");  //get first child, etc
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         NetPotSprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
-        NetPotChoices = transform.parent.gameObject.transform.GetChild(5).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
-        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
+        NetPotChoices = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        harvestButton = transform.parent.gameObject.transform.GetChild(8).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(5).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(7).gameObject;
         NetPot = this.transform.parent.GetComponent<Button>();
         //Debug.Log("PotArray " + "Spot" + Pot);
         //Debug.Log("Haskey " + PlayerPrefs.HasKey("State" + Pot));
@@ -75,7 +75,6 @@ public class SawahPlantFunction : MonoBehaviour
         occupier = "Padi";
         timer = timerDefaultPadi;
         price = priceDefaultPadi;
-        //ClickHandler();
         Buy();
     }
 
@@ -84,36 +83,35 @@ public class SawahPlantFunction : MonoBehaviour
     {
         string plantingSpot = "Spot" + Pot;
         state = PlayerPrefs.GetInt("State" + Pot);
-        timer = PlayerPrefs.GetInt("TimerSawah" + Pot);
+        timer = PlayerPrefs.GetFloat("TimerSawah" + Pot);
 
 
         if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
         {
             Planting();
-
-            Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
+            //Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
             string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
+            //Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
 
         }
 
         else if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == true)
         {
-            Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
+            //Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
         }
 
         else if (state == 3)
         {
             Harvest();
-            Debug.Log("Harvested! State: " + state);
+            //Debug.Log("Harvested! State: " + state);
         }
 
         else
         {
-            Debug.Log("bruh. State: " + state);
-            Debug.Log("State: " + state + "Planting at: " + plantingSpot);
+            //Debug.Log("bruh. State: " + state);
+            //Debug.Log("State: " + state + "Planting at: " + plantingSpot);
             string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier);
+            //Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier);
         }
 
     }
@@ -124,7 +122,7 @@ public class SawahPlantFunction : MonoBehaviour
         if (gold >= price)
         {
             PlayerPrefs.SetString("Spot" + Pot, occupier);
-            PlayerPrefs.SetInt("TimerSawah" + Pot, timer);
+            PlayerPrefs.SetFloat("TimerSawah" + Pot, timer);
             PlayerPrefs.SetInt("State" + Pot, 1);
             PlayerPrefs.SetInt("Gold", gold - price);
             PlayerPrefs.Save();
@@ -135,7 +133,7 @@ public class SawahPlantFunction : MonoBehaviour
         else
         {
             netPotChoicesBool = false;
-            Debug.Log("Not Enugh Gold");
+            //Debug.Log("Not Enugh Gold");
             Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
@@ -144,9 +142,9 @@ public class SawahPlantFunction : MonoBehaviour
     public void Planting()
     {
         state = PlayerPrefs.GetInt("State" + Pot);
-        timer = PlayerPrefs.GetInt("TimerSawah" + Pot);
+        timer = PlayerPrefs.GetFloat("TimerSawah" + Pot);
         occupier = PlayerPrefs.GetString("Spot" + Pot);
-        Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
+        //Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         NetPotSprite.GetComponent<Image>().enabled = true;
         timerBG.SetActive(true); 
         timerText.SetActive(true);
@@ -173,7 +171,7 @@ public class SawahPlantFunction : MonoBehaviour
 
         timer--;
         PlayerPrefs.SetInt("State" + Pot, state);
-        PlayerPrefs.SetInt("TimerSawah" + Pot, timer);
+        PlayerPrefs.SetFloat("TimerSawah" + Pot, timer);
         PlayerPrefs.Save();
 
         if (timer <= 0)
@@ -185,7 +183,7 @@ public class SawahPlantFunction : MonoBehaviour
             gloves.SetActive(true);
         }
 
-        Debug.Log("Timer: " + timer + " State: " + state);
+        //Debug.Log("Timer: " + timer + " State: " + state);
     }
 
     public void Harvest()
@@ -194,7 +192,7 @@ public class SawahPlantFunction : MonoBehaviour
         NetPot.interactable = true;
         if (timer <= 0)
         {
-            Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
+            //Debug.Log("Timer State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
             if (occupier == "Padi")
             {
                 int lastPadi = PlayerPrefs.GetInt("Nasi");
@@ -205,15 +203,15 @@ public class SawahPlantFunction : MonoBehaviour
 
         else
         {
-            Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
+            //Debug.Log("Blom bisa di harvest. State: " + state + "/4 dan Timer: " + timer + "/0");
         }
 
         PlayerPrefs.DeleteKey("Spot" + Pot);
         NetPotSprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
-        Debug.Log("Harvested! " + occupier);
         timerBG.SetActive(false);
         timerText.SetActive(false);
         gloves.SetActive(false);
+        //Debug.Log("Harvested! " + occupier);
         Alert.ShowAlert("Harvested " + occupier + " x1");
     }
 }

@@ -9,36 +9,36 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     public int Pot;
 
     int state = 0;
-    int timer = 0;
+    float timer = 0;
 
     int price;
 
-    int priceDefaultJambu = 50;
-    int priceDefaultLengkeng = 100;
-    int priceDefaultPepaya = 150;
-    int priceDefaultRambutan = 150;
-    int priceDefaultPisang = 150;
+    int priceDefaultJambu = 200;
+    int priceDefaultLengkeng = 200;
+    int priceDefaultPepaya = 200;
+    int priceDefaultRambutan = 200;
+    int priceDefaultPisang = 200;
 
-    int timerDefaultJambu = 100 * (GlobalVariable.pupukBuff / 100);
-        int timerStateJambu2 = 50 * (GlobalVariable.pupukBuff / 100);
-        int timerStateJambu3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultJambu = 400 * GlobalVariable.pupukBuff / 100;
+    float timerStateJambu2 = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStateJambu3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultLengkeng = 100 * (GlobalVariable.pupukBuff / 100);
-        int timerStateLengkeng2 = 50 * (GlobalVariable.pupukBuff / 100);
-        int timerStateLengkeng3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultLengkeng = 400 * GlobalVariable.pupukBuff / 100;
+    float timerStateLengkeng2 = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStateLengkeng3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultPepaya = 100 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePepaya2 = 50 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePepaya3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultPepaya = 400 * GlobalVariable.pupukBuff / 100;
+    float timerStatePepaya2 = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStatePepaya3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultRambutan = 100 * (GlobalVariable.pupukBuff / 100);
-        int timerStateRambutan2 = 50 * (GlobalVariable.pupukBuff / 100);
-        int timerStateRambutan3 = 1 * (GlobalVariable.pupukBuff / 100);
+    float timerDefaultRambutan = 400 * GlobalVariable.pupukBuff / 100;
+    float timerStateRambutan2 = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStateRambutan3 = 1 * GlobalVariable.pupukBuff / 100;
 
-    int timerDefaultPisang = 100 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePisang2 = 50 * (GlobalVariable.pupukBuff / 100);
-        int timerStatePisang3 = 1 * (GlobalVariable.pupukBuff / 100);    
-    int timerDefault;
+    float timerDefaultPisang = 400 * GlobalVariable.pupukBuff / 100;
+    float timerStatePisang2 = 200 * GlobalVariable.pupukBuff / 100;
+    float timerStatePisang3 = 1 * GlobalVariable.pupukBuff / 100;
+    float timerDefault;
 
     //string[] PotArray = { "Pot1", "Pot2", "Pot3", "Pot4", "Pot5", "Pot6", "Pot7", "Pot8", "Pot9", "Pot10", "Pot11", "Pot12" }; //put pots in an array
     //string[] StateArray = { "StatePot1", "StatePot2", "StatePot3", "StatePot4", "StatePot5", "StatePot6", "StatePot7", "StatePot8", "StatePot9", "StatePot10", "StatePot11","StatePot12" };
@@ -60,11 +60,11 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     {
         childImage = transform.parent.gameObject.transform.GetChild(1).gameObject;
         Plantspot2Sprite = transform.parent.gameObject.transform.GetChild(3).gameObject;
-        Plantspot2Choices = transform.parent.gameObject.transform.GetChild(5).gameObject;
-        harvestButton = transform.parent.gameObject.transform.GetChild(4).gameObject;
-        timerText = transform.parent.gameObject.transform.GetChild(7).gameObject;
-        timerBG = transform.parent.gameObject.transform.GetChild(6).gameObject;
-        gloves = transform.parent.gameObject.transform.GetChild(8).gameObject;
+        Plantspot2Choices = transform.parent.gameObject.transform.GetChild(4).gameObject;
+        harvestButton = transform.parent.gameObject.transform.GetChild(8).gameObject;
+        timerText = transform.parent.gameObject.transform.GetChild(6).gameObject;
+        timerBG = transform.parent.gameObject.transform.GetChild(5).gameObject;
+        gloves = transform.parent.gameObject.transform.GetChild(7).gameObject;
         Plantspot2 = this.transform.parent.GetComponent<Button>();
         //Debug.Log("PlantingSpotArray " + "PlantingSpot2" + Pot);
         //Debug.Log("Haskey " + PlayerPrefs.HasKey("State_Kebun2" + Pot));
@@ -128,35 +128,35 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     {
         string plantingSpot = "PlantingSpot2"+Pot;
         state = PlayerPrefs.GetInt("State_Kebun2"+Pot);
-        timer = PlayerPrefs.GetInt("Timer_Kebun2"+Pot);
+        timer = PlayerPrefs.GetFloat("Timer_Kebun2"+Pot);
 
 
         if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == false)
         {
             Planting();
-            Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
+            //Debug.Log("Planting function ran. State: " + state + "Planting at PotArray no. : " + Pot);
             string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
+            //Debug.Log("Di pot " + plantingSpot + " sekarang udah ada: " + occupier);
 
         }
 
         else if (state == 0 && PlayerPrefs.HasKey(plantingSpot) == true)
         {
-            Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
+            //Debug.Log("HasKey? " + PlayerPrefs.HasKey(plantingSpot));
         }
 
         else if (state == 3)
         {
             Harvest();
-            Debug.Log("Harvested! State: " + state);
+            //Debug.Log("Harvested! State: " + state);
         }
 
         else
         {
-            Debug.Log("bruh. State: " + state);
-            Debug.Log("State_Kebun: " + state + "Planting at: " + plantingSpot);
+            //Debug.Log("bruh. State: " + state);
+            //Debug.Log("State_Kebun: " + state + "Planting at: " + plantingSpot);
             string occupier = PlayerPrefs.GetString(plantingSpot);
-            Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier);
+            //Debug.Log("Di pot " + plantingSpot + " ini udah ada: " + occupier);
         }
 
     }
@@ -167,7 +167,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         if (gold >= price)
         {
             PlayerPrefs.SetString("PlantingSpot2"+Pot, occupier);
-            PlayerPrefs.SetInt("Timer_Kebun2"+Pot, timer);
+            PlayerPrefs.SetFloat("Timer_Kebun2"+Pot, timer);
             PlayerPrefs.SetInt("State_Kebun2"+Pot, 1);
             PlayerPrefs.SetInt("Gold", gold - price);
             PlayerPrefs.Save();
@@ -179,6 +179,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         {
             Plantspot2ChoicesBool = false;
             Debug.Log("Not Enough Gold");
+            Alert.ShowAlert("Gold Tidak cukup!");
         }
     }
 
@@ -186,10 +187,10 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
     public void Planting()
     {
         state = PlayerPrefs.GetInt("State_Kebun2"+Pot);
-        timer = PlayerPrefs.GetInt("Timer_Kebun2"+Pot);
+        timer = PlayerPrefs.GetFloat("Timer_Kebun2"+Pot);
         occupier = PlayerPrefs.GetString("PlantingSpot2"+Pot);
-        Debug.Log("Occupier " + occupier);
-        Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
+        //Debug.Log("Occupier " + occupier);
+        //Debug.Log("Plant Progress Called. State " + state + " Timer " + timer);
         Plantspot2Sprite.GetComponent<Image>().enabled = true;
         timerBG.SetActive(true);
         timerText.SetActive(true);
@@ -277,7 +278,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
 
         timer--;
         PlayerPrefs.SetInt("State_Kebun2"+Pot, state);
-        PlayerPrefs.SetInt("Timer_Kebun2"+Pot, timer);
+        PlayerPrefs.SetFloat("Timer_Kebun2"+Pot, timer);
         PlayerPrefs.Save();
 
         if (timer <= 0)
@@ -289,7 +290,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
             gloves.SetActive(true);
         }
 
-        Debug.Log("Timer_Kebun2: " + timer + " State: " + state);
+        //Debug.Log("Timer_Kebun2: " + timer + " State: " + state);
     }
 
     public void Harvest()
@@ -298,7 +299,7 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
         Plantspot2.interactable = true;
         if (timer <= 0)
         {
-            Debug.Log("Timer_Kebun2 State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
+            //Debug.Log("Timer_Kebun2 State OK! Timer:" + timer + " State: " + state + " Occupier: " + occupier);
             if (occupier == "Jambu")
             {
                 int lastJambu = PlayerPrefs.GetInt("Jambu");
@@ -329,15 +330,15 @@ public class PlantFunction_Kebun_2 : MonoBehaviour
 
         else
         {
-            Debug.Log("Blom bisa di harvest. State_Kebun2: " + state + "/4 dan Timer: " + timer + "/0");
+            //Debug.Log("Blom bisa di harvest. State_Kebun2: " + state + "/4 dan Timer: " + timer + "/0");
         }
 
         PlayerPrefs.DeleteKey("PlantingSpot2"+Pot);
         Plantspot2Sprite.GetComponent<Image>().sprite = Resources.Load<Sprite>("icon/tanaman/placeholder");
-        Debug.Log("Harvested " + occupier);
         timerText.SetActive(false);
         timerBG.SetActive(false);
         gloves.SetActive(false);
+        //Debug.Log("Harvested " + occupier);
         Alert.ShowAlert("Harvested " + occupier + " x1");
 
     }
